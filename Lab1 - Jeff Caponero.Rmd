@@ -1,0 +1,438 @@
+---
+title: "| UNIVERSIDADE FEDERAL DA BAHIA \n| INSTITUTO DE MATEMÁTICA E ESTATÍSTICA\n|\n|\n|\n|
+  FERNANDO\n| JEFF CAPONERO\n|\n|\n|\n|\n|\n|\n| Relatório de Atividade Laboratorial
+  de Regressão\n"
+  #1\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n| Salvador\n| 2023\n\n| Disciplina: Análise
+output:
+  pdf_document:
+    toc: yes
+  word_document:
+    toc: yes
+  html_document:
+    highlight: textmate
+    includes: null
+    teme: flatly
+    toc: yes
+    toc_float:
+      collapsed: yes
+      smooth_scroll: no
+--- 
+
+```{r, include=FALSE}
+options(tinytex.verbose = TRUE)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+<style>
+body {
+text-align: justify}
+</style>
+
+
+\newpage
+
+## Apresentação
+
+\newline
+\newline
+
+Este documento é um relatório referente a atividade de correlação e dispersão de características associadas a relação da concentração de glicose no plasma de mulheres da tribo Pina.
+
+## Introdução  
+
+\newline
+\newline
+
+O Instituto Nacional de Diabetes e de Doenças Digestivas e Renais dos EUA conduziram um estudo com 768 mulheres da tribo Pina, que residem próximo a Phoenix. As seguintes características foram coletadas: número de gestações [pregnat], concentração de glicose no plasma (obtido duas horas depois da realização de um teste de tolerância a glicose) [glucose], pressão sanguínea diastólica (mmHg) [diastolic], largura do tríceps (mm) [triceps], nível de insulina (µU/ml) [insulin], índice de massa corpórea (kg/m2) [bmi], nível de função diabética [diabetes], idade em anos [age] e um teste para avaliação de sinais de diabetes (0 = negativo e 1 = positivo) [teste]. Na base de dados as características estão rotuladas em inglês conforme as indicações entre colchetes.  Os resultados obitidos foram avaliados e contrastados entre si.  
+
+## Objetivos
+
+\newline
+\newline
+
+1. Sumarização dos dados do estudo.
+2. Verificação de observações não usuais. 
+3. Relação da variável resposta (diabetes) com as demais variáveis. 
+4. Comparação do teste com as variáveis quantitativas e os níveis de glicose e de insulina, a pressão diastólica, o tríceps, o bmi, a idade e o nível de função diabética entre aqueles que apresentaram resultados do teste positivo e negativo.
+
+
+
+\newline
+\newline
+
+## Sumarização dos dados  
+
+\newline
+\newline
+
+Com base nos dados disponíveis no arquivo "Dados_Lab01.csv", avaliou-se medidas de tendência central e de variabilidade além de se construir um histograma para cada uma delas, como apresentado abaixo.
+
+
+\newline
+
+
+**Tabela 1 - Medidas de tendência central e de variabilidade dos dados do estudo.**
+
+
+```{R message=FALSE, warning=FALSE, echo = FALSE}
+##############################################
+###         Sumarização dos dados          ###
+##############################################
+library(knitr)
+set.seed(7)
+# setwd("~/Dropbox/Estatística/2023.1/Regressão/Exercícios")
+dados = read.csv("Dados_Lab01.csv", sep = ";")
+tab.gest = summary(dados$pregnant)
+tab.gluc = summary(dados$glucose)
+tab.dias = summary(dados$diastolic)
+tab.tric = summary(dados$triceps)
+tab.insu = summary(dados$insulin)
+tab.bmi = summary(dados$bmi)
+tab.diab = summary(dados$diabetes)
+tab.age = summary(dados$age)
+
+tab = rbind(tab.gest,tab.gluc, tab.dias, tab.tric, tab.insu, tab.bmi, tab.diab, tab.age)
+
+colnames(tab) = c("Mínimo", "1o Q.", "Mediana", "Média", "3o Q.", "Máximo")
+rownames(tab) = c("Gestações", "Glicose", "P. Diastólica", "Tríceps", "Insulina", "IMC", "N. Diabetes", "Idade")
+
+kable(round(tab,2))
+```
+
+\newpage
+
+**Figura 1 - Resultado dos testes realizados nas mulheres da Tribo Pina.**
+
+\newline
+\newline
+
+```{R message=FALSE, warning=FALSE, echo = FALSE}
+# Plot the chart.
+tab.test = table(dados$test)
+rownames(tab.test) = c("Negativo", "Positivo")
+pie(tab.test)
+```
+\newline
+\newline
+\newline
+
+**Figura 2 - Histogramas dos dados do estudo.**
+
+```{R message=FALSE, warning=FALSE, echo = FALSE}
+
+par(mfrow = c(2,2))
+hist(dados$pregnant,col= "lightblue", breaks = 10, main = "Gestações", xlab = "Número de Gestações")
+hist(dados$glucose,col= "lightblue", breaks = 10, main = "Glicose", xlab = "Concentração no Plasma")
+
+hist(dados$diastolic,col= "lightblue", breaks = 10, main = "Pressão Diastólica", xlab = "Pressão Diastólica (mmHg)")
+hist(dados$triceps,col= "lightblue", breaks = 10, main = "Largura do Tríceps", xlab = "LArgura do Tríceps (mm)")
+
+hist(dados$insulin,col= "lightblue", breaks = 10, main = "Insulina", xlab = "Nível de Insulina (µU/ml)")
+hist(dados$bmi,col= "lightblue", breaks = 10, main = "IMC",
+     xlab = "IMC (Kg/m2)")
+
+hist(dados$diabetes,col= "lightblue", breaks = 10, main = "Diabetes", xlab = "Nível de Função Diabética")
+hist(dados$age,col= "lightblue", breaks = 10, main = "Idade", xlab = "Idade (anos)")
+```
+
+\newline
+\newline
+\newline
+\newline
+
+Observa-se que a presença de dados não usuais prejudicou a visualização do comportamento de algumas variáveis, como é o caso do nível de glicose no plasma, a pressão diastólica, a largura do tríceps, a concentração de insulina e o índice de massa corpórea. Fazendo-se necessário um tratamento dos dados analisados. 
+
+\newline
+\newline
+
+## Tratamento dos dados  
+
+\newline
+\newline
+
+Observou-se a presença de dados cujo valor igual a zero não corresponde a uma realidade plausível, desta forma, foram eliminados os registros com esses valores e repetidos as análise anteriores.
+
+
+\newline
+
+
+**Tabela 2 - Medidas de tendência central e de variabilidade dos dados do estudo sem observações não usuais.**
+
+
+```{R message=FALSE, warning=FALSE, echo = FALSE}
+##############################################
+###          Tratamento dos dados          ###
+##############################################
+library(dplyr)
+dados = dados %>% filter(glucose != 0)
+dados = dados %>% filter(diastolic != 0)
+dados = dados %>% filter(triceps != 0)
+dados = dados %>% filter(insulin != 0)
+dados = dados %>% filter(bmi != 0)
+dados = dados %>% filter(diabetes != 0)
+dados = dados %>% filter(age != 0)
+
+
+tab.gest = summary(dados$pregnant)
+tab.gluc = summary(dados$glucose)
+tab.dias = summary(dados$diastolic)
+tab.tric = summary(dados$triceps)
+tab.insu = summary(dados$insulin)
+tab.bmi = summary(dados$bmi)
+tab.diab = summary(dados$diabetes)
+tab.age = summary(dados$age)
+
+tab = rbind(tab.gest,tab.gluc, tab.dias, tab.tric, tab.insu, tab.bmi, tab.diab, tab.age)
+
+colnames(tab) = c("Mínimo", "1o Q.", "Mediana", "Média", "3o Q.", "Máximo")
+rownames(tab) = c("Gestações", "Glicose", "P. Diastólica", "Tríceps", "Insulina", "IMC", "N. Diabetes", "Idade")
+
+kable(round(tab,2))
+```
+
+
+\newpage
+
+**Figura 3 - Resultado dos testes realizados nas mulheres da Tribo Pina.**
+
+
+```{R message=FALSE, warning=FALSE, echo = FALSE}
+# Plot the chart.
+tab.test = table(dados$test)
+rownames(tab.test) = c("Negativo", "Positivo")
+pie(tab.test)
+```
+
+\newline
+
+
+**Figura 4 - Histogramas dos dados do estudo sem observações não usuais.**
+
+```{R message=FALSE, warning=FALSE, echo = FALSE}
+
+par(mfrow = c(2,2))
+hist(dados$pregnant,col= "lightblue", breaks = 10, main = "Gestações", xlab = "Número de Gestações")
+hist(dados$glucose,col= "lightblue", breaks = 10, main = "Glicose", xlab = "Concentração no Plasma")
+
+hist(dados$diastolic,col= "lightblue", breaks = 10, main = "Pressão Diastólica", xlab = "Pressão Diastólica (mmHg)")
+hist(dados$triceps,col= "lightblue", breaks = 10, main = "Largura do Tríceps", xlab = "LArgura do Tríceps (mm)")
+
+hist(dados$insulin,col= "lightblue", breaks = 10, main = "Insulina", xlab = "Nível de Insulina (µU/ml)")
+hist(dados$bmi,col= "lightblue", breaks = 10, main = "IMC",
+     xlab = "IMC (Kg/m2)")
+
+hist(dados$diabetes,col= "lightblue", breaks = 10, main = "Diabetes", xlab = "Nível de Função Diabética")
+hist(dados$age,col= "lightblue", breaks = 10, main = "Idade", xlab = "Idade (anos)")
+```
+
+\newline
+\newline
+
+Embora a eliminação dos registros com dados faltantes tenha melhorado a a visualização do comportamento de algumas variáveis, como é o caso do nível de glicose no plasma, a pressão diastólica, a largura do tríceps, a concentração de insulina e o índice de massa corpórea; nota-se uma perda de informação para as variáveis que estavam corretamente descritas anteriormente como é o caso do número de gestações. Nota-se que o número médio foi reduzido de 3,85 para 3,30. Semelhantemente, há perda de informação para as variáveis nível de função diabética, idade e teste de sinais de diabetes.  
+
+Observou-se ainda que algumas variáveis tem valores que parecem irreais, como ó caso de largura de tríceps de 7mm ou nível de insulina de 849 µU/ml. Entretanto esta avaliação só pode ser feita por um especialista, isto é, alguẽm capaz de definir intervalo valores possíveis para cada variável.
+
+
+## Relação da variável diabetes com as demais variáveis 
+
+\newpage
+
+**Figura 5 - Diagramas de dispersão da relação da variável resposta (diabetes) com as demais variáveis.**
+
+```{R message=FALSE, warning=FALSE, echo = FALSE}
+
+par(mfrow = c(2,2))
+plot(dados$pregnant, dados$diabetes,   col= "lightblue", main = "Gestações", xlab = "Número de Gestações", ylab = "Nível de Função Diabética")
+plot(dados$glucose, dados$diabetes, col= "lightblue", main = "Glicose", xlab = "Concentração no Plasma", ylab = "Nível de Função Diabética")
+
+plot(dados$diastolic, dados$diabetes, col= "lightblue", main = "Pressão Diastólica", xlab = "Pressão Diastólica (mmHg)", ylab = "Nível de Função Diabética")
+plot(dados$triceps, dados$diabetes, col= "lightblue", main = "Largura do Tríceps", xlab = "Largura do Tríceps (mm)", ylab = "Nível de Função Diabética")
+
+plot(dados$insulin, dados$diabetes, col= "lightblue", main = "Insulina", xlab = "Nível de Insulina (µU/ml)", ylab = "Nível de Função Diabética")
+plot(dados$bmi, dados$diabetes, col= "lightblue", main = "IMC",
+     xlab = "IMC (Kg/m2)", ylab = "Nível de Função Diabética")
+
+plot(dados$age, dados$diabetes, col= "lightblue", main = "Idade", xlab = "Idade (anos)", ylab = "Nível de Função Diabética")
+```
+
+\newline
+\newline
+
+Visualmente nenhuma das características analizadas parece ter qualquer correlação com o nível de função diabética. 
+
+\newpage
+
+**Figura 6 - Boxplot do teste de sinais de diabetes com as demais variáveis.**
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+par(mfrow = c(2,2))
+boxplot(dados$pregnant ~ dados$test, col= "lightblue", main = "Gestações", ylab = "Número de Gestações", xlab = "Teste de Sinais de Diabetes")
+boxplot(dados$glucose ~ dados$test, col= "lightblue", main = "Glicose", ylab = "Concentração no Plasma", xlab = "Teste de Sinais de Diabetes")
+
+boxplot(dados$diastolic ~ dados$test, col= "lightblue", main = "P. Diastólica", ylab = "Pressão Diastólica (mmHg)", xlab = "Teste de Sinais de Diabetes")
+boxplot(dados$triceps ~ dados$test,col= "lightblue", main = "Tríceps", ylab = "Largura do Tríceps (mm)", xlab = "Teste de Sinais de Diabetes")
+
+boxplot(dados$insulin ~ dados$test,col= "lightblue", main = "Insulina", ylab = "Nível de Insulina (µU/ml)", xlab = "Teste de Sinais de Diabetes")
+boxplot(dados$bmi ~ dados$test,col= "lightblue", main = "IMC", ylab = "IMC (Kg/m2)", xlab = "Teste de Sinais de Diabetes")
+
+boxplot(dados$diabetes ~ dados$test,col= "lightblue", main = "N. Diabetes", ylab = "Nível de Função Diabética", xlab = "Teste de Sinais de Diabetes")
+boxplot(dados$age ~ dados$test,col= "lightblue", main = "Idade", ylab = "Idade (anos)", xlab = "Teste de Sinais de Diabetes")
+
+```
+
+\newline
+\newline
+
+
+
+A análise dos bloxplots permite uma anális um pouco mais informativa, uma vez que agora é possível verificar certa correlação entre o teste de sinais de diabetes e as demais variáveis. Nota-se que esta correlação não apresenta-se em grau superlativo, mas em níveis mais fracos. Destacam-se os níveis de glicose no plasma e o nível de função diabética com uma maior correlação, mas ainda assim sujeita a grande variabilidade.
+
+
+
+
+## Conclusão 
+
+Com base nos resutadoa analisádos, velifica-se que não parece ser suficiente a análise laboratorial na definição do estado de diabetes das mulheres da Tribo Pina. Infere-se que a análise clinica pode se valer das informações coletadas mas seu julgamento final deve contar com outras técnicas disgnósticas.
+
+\newpage
+
+## Apêndice
+
+### Código em linguagem R
+
+
+```{R message=FALSE, warning=FALSE, eval = FALSE}
+##############################################
+###         Sumarização dos dados          ###
+##############################################
+library(knitr)
+set.seed(7)
+setwd("~/Dropbox/Estatística/2023.1/Regressão/Exercícios")
+dados = read.csv("Dados_Lab01.csv", sep = ";")
+tab.gest = summary(dados$pregnant)
+tab.gluc = summary(dados$glucose)
+tab.dias = summary(dados$diastolic)
+tab.tric = summary(dados$triceps)
+tab.insu = summary(dados$insulin)
+tab.bmi = summary(dados$bmi)
+tab.diab = summary(dados$diabetes)
+tab.age = summary(dados$age)
+
+tab = rbind(tab.gest,tab.gluc, tab.dias, tab.tric, tab.insu, tab.bmi, tab.diab, tab.age)
+
+colnames(tab) = c("Mínimo", "1o Q.", "Mediana", "Média", "3o Q.", "Máximo")
+rownames(tab) = c("Gestações", "Glicose", "P. Diastólica", "Tríceps", "Insulina", "IMC", "N. Diabetes", "Idade")
+
+kable(round(tab,2))
+
+# Plot the chart.
+tab.test = table(dados$test)
+rownames(tab.test) = c("Negativo", "Positivo")
+pie(tab.test)
+
+par(mfrow = c(2,2))
+hist(dados$pregnant,col= "lightblue", breaks = 10, main = "Gestações", xlab = "Número de Gestações")
+hist(dados$glucose,col= "lightblue", breaks = 10, main = "Glicose", xlab = "Concentração no Plasma")
+
+hist(dados$diastolic,col= "lightblue", breaks = 10, main = "Pressão Diastólica", xlab = "Pressão Diastólica (mmHg)")
+hist(dados$triceps,col= "lightblue", breaks = 10, main = "Largura do Tríceps", xlab = "LArgura do Tríceps (mm)")
+
+hist(dados$insulin,col= "lightblue", breaks = 10, main = "Insulina", xlab = "Nível de Insulina (µU/ml)")
+hist(dados$bmi,col= "lightblue", breaks = 10, main = "IMC",
+     xlab = "IMC (Kg/m2)")
+
+hist(dados$diabetes,col= "lightblue", breaks = 10, main = "Diabetes", xlab = "Nível de Função Diabética")
+hist(dados$age,col= "lightblue", breaks = 10, main = "Idade", xlab = "Idade (anos)")
+
+##############################################
+###          Tratamento dos dados          ###
+##############################################
+library(dplyr)
+dados = dados %>% filter(glucose != 0)
+dados = dados %>% filter(diastolic != 0)
+dados = dados %>% filter(triceps != 0)
+dados = dados %>% filter(insulin != 0)
+dados = dados %>% filter(bmi != 0)
+dados = dados %>% filter(diabetes != 0)
+dados = dados %>% filter(age != 0)
+
+
+tab.gest = summary(dados$pregnant)
+tab.gluc = summary(dados$glucose)
+tab.dias = summary(dados$diastolic)
+tab.tric = summary(dados$triceps)
+tab.insu = summary(dados$insulin)
+tab.bmi = summary(dados$bmi)
+tab.diab = summary(dados$diabetes)
+tab.age = summary(dados$age)
+
+tab = rbind(tab.gest,tab.gluc, tab.dias, tab.tric, tab.insu, tab.bmi, tab.diab, tab.age)
+
+colnames(tab) = c("Mínimo", "1o Q.", "Mediana", "Média", "3o Q.", "Máximo")
+rownames(tab) = c("Gestações", "Glicose", "P. Diastólica", "Tríceps", "Insulina", "IMC", "N. Diabetes", "Idade")
+
+kable(round(tab,2))
+
+# Plot the chart.
+tab.test = table(dados$test)
+rownames(tab.test) = c("Negativo", "Positivo")
+pie(tab.test)
+
+par(mfrow = c(2,2))
+hist(dados$pregnant,col= "lightblue", breaks = 10, main = "Gestações", xlab = "Número de Gestações")
+hist(dados$glucose,col= "lightblue", breaks = 10, main = "Glicose", xlab = "Concentração no Plasma")
+
+hist(dados$diastolic,col= "lightblue", breaks = 10, main = "Pressão Diastólica", xlab = "Pressão Diastólica (mmHg)")
+hist(dados$triceps,col= "lightblue", breaks = 10, main = "Largura do Tríceps", xlab = "LArgura do Tríceps (mm)")
+
+hist(dados$insulin,col= "lightblue", breaks = 10, main = "Insulina", xlab = "Nível de Insulina (µU/ml)")
+hist(dados$bmi,col= "lightblue", breaks = 10, main = "IMC",
+     xlab = "IMC (Kg/m2)")
+
+hist(dados$diabetes,col= "lightblue", breaks = 10, main = "Diabetes", xlab = "Nível de Função Diabética")
+hist(dados$age,col= "lightblue", breaks = 10, main = "Idade", xlab = "Idade (anos)")
+
+
+
+##############################################
+###          Diagramas de Dispersão        ###
+##############################################
+
+par(mfrow = c(2,2))
+plot(dados$pregnant, dados$diabetes,   col= "lightblue", main = "Gestações", xlab = "Número de Gestações", ylab = "Nível de Função Diabética")
+plot(dados$glucose, dados$diabetes, col= "lightblue", main = "Glicose", xlab = "Concentração no Plasma", ylab = "Nível de Função Diabética")
+
+plot(dados$diastolic, dados$diabetes, col= "lightblue", main = "Pressão Diastólica", xlab = "Pressão Diastólica (mmHg)", ylab = "Nível de Função Diabética")
+plot(dados$triceps, dados$diabetes, col= "lightblue", main = "Largura do Tríceps", xlab = "Largura do Tríceps (mm)", ylab = "Nível de Função Diabética")
+
+plot(dados$insulin, dados$diabetes, col= "lightblue", main = "Insulina", xlab = "Nível de Insulina (µU/ml)", ylab = "Nível de Função Diabética")
+plot(dados$bmi, dados$diabetes, col= "lightblue", main = "IMC",
+     xlab = "IMC (Kg/m2)", ylab = "Nível de Função Diabética")
+
+plot(dados$age, dados$diabetes, col= "lightblue", main = "Idade", xlab = "Idade (anos)", ylab = "Nível de Função Diabética")
+
+##############################################
+###          Boxplot  dos Testes           ###
+##############################################
+
+par(mfrow = c(2,2))
+boxplot(dados$pregnant ~ dados$test, col= "lightblue", main = "Gestações", ylab = "Número de Gestações", xlab = "Teste de Sinais de Diabetes")
+boxplot(dados$glucose ~ dados$test, col= "lightblue", main = "Gestações", ylab = "Concentração no Plasma", xlab = "Teste de Sinais de Diabetes")
+
+boxplot(dados$diastolic ~ dados$test, col= "lightblue", main = "Gestações", ylab = "Pressão Diastólica (mmHg)", xlab = "Teste de Sinais de Diabetes")
+boxplot(dados$triceps ~ dados$test,col= "lightblue", main = "Gestações", ylab = "Largura do Tríceps (mm)", xlab = "Teste de Sinais de Diabetes")
+
+boxplot(dados$insulin ~ dados$test,col= "lightblue", main = "Gestações", ylab = "Nível de Insulina (µU/ml)", xlab = "Teste de Sinais de Diabetes")
+boxplot(dados$bmi ~ dados$test,col= "lightblue", main = "Gestações", ylab = "IMC (Kg/m2)", xlab = "Teste de Sinais de Diabetes")
+
+boxplot(dados$diabetes ~ dados$test,col= "lightblue", main = "Gestações", ylab = "Nível de Função Diabética", xlab = "Teste de Sinais de Diabetes")
+boxplot(dados$age ~ dados$test,col= "lightblue", main = "Gestações", ylab = "Idade (anos)", xlab = "Teste de Sinais de Diabetes")
+
+```
