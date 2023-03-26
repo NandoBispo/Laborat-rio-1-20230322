@@ -2,7 +2,11 @@
 title: "LABORATÓRIO 1: Relação da concentração de glicose no plasma com características diversas"
 author: Fernando, Jeff Caponero
 format: 
-  html
+  html:
+    toc: true
+    toc-location: left
+    page-layout: full
+    back-to-top-navigation: true
   # pdf:
   #   documentclass: scrartcl
   #   papersize: letter
@@ -14,11 +18,26 @@ format:
 
 ## Apresentação
 
-Este documento é um relatório referente a atividade de correlação e dispersão de características associadas a relação da concentração de glicose no plasma de mulheres da tribo Pina.
+Este relatório visa a descrição da análise realizada nos dados oriundos do Instituto Nacional de Diabetes e de Doenças Digestivas e Renais dos EUA que conduziram um estudo com 768 mulheres da tribo Pina, que residem próximo a Phoenix e coletaram as seguintes características das participantes do estudo:
 
-## Dados sem tratamento
+:::{.incrementyal}
+- Número de gestações [**pregnat**];
+- Concentração de glicose no plasma (obtido
+duas horas depois da realização de um teste de tolerância a glicose) [**glucose**];
+pressão sanguínea diastólica (mmHg) [**diastolic**];
+- Largura do tríceps (mm) [**triceps**];
+- Nível de insulina (µU/ml) [**insulin**];
+- Índice de massa corpórea (kg/m2) [**bmi**];
+- Nível de função diabética [**diabetes**];
+- Iidade em anos [**age**];
+- Teste para avaliação de sinais de diabetes (0 = negativo e 1 = positivo) [**teste**].
+:::
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Análise Descritiva
+::: {.panel-tabset}
+### Dados sem tratamento
+
+Neste primeiro momento será realizada a análise das características sem nenhum tipo de tratativa dos dados, a fim de identificar padrões, partindo, a princípio, da tabela contendo as principais medidas de posição e dispersão.
 
 ```{r}
 #| echo: false
@@ -42,7 +61,7 @@ dados <- dados |>
     )
 ```
 
-You can add options to executable code like this 
+
 
 ```{r}
 #| echo: false
@@ -65,20 +84,20 @@ dados|>
       align = "c", 
       row.names = T,
       col.names =
-        c("Min", "Q1", "Med", "Média", "Q3", "Max", "Desvio Padrão", "CV")
+        c("Min", "Q1", "Med", "Média", "Q3", "Max", "D.Padrão", "CV")
     )|>
     kable_styling(
       # bootstrap_options = c("striped", "hover"),
       latex_options = c("striped"),
       stripe_color = T,
-      full_width = F,
+      full_width = T,
       fixed_thead = T
     ) %>%
-    footnote(general = "Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA") |>
+    footnote(general = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA") |>
     kable_material()
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+Conforme consta na Figura 1, cerca de 35% das participantes apresentaram resultado positivo para a presença de sinais de diabetes.
 
 ```{r}
 #| echo: false
@@ -109,13 +128,12 @@ dados |>
 ```{r}
 #| echo: false
 #| warning: false
-#| 
+
 g1 <- dados|>
   ggplot() +
     aes(x = glucose) +
   geom_histogram(
     aes(y = ..density..),
-    # binwidth = 5,
     fill = "lightblue",
     colour = "darkblue") +
   geom_density(
@@ -186,7 +204,6 @@ g5 <- dados|>
   aes(x = insulin) +
   geom_histogram(
     aes(y = ..density..),
-    # binwidth = 25,
     fill = "lightblue",
     colour = "darkblue") +
   geom_density(
@@ -204,7 +221,6 @@ g6 <- dados|>
   aes(x = bmi) +
   geom_histogram(
     aes(y = ..density..),
-    # binwidth = 5,
     fill = "lightblue",
     colour = "darkblue") +
   geom_density(
@@ -222,7 +238,6 @@ g7 <- dados|>
   aes(x = diabetes) +
   geom_histogram(
     aes(y = ..density..),
-    # binwidth = 5,
     fill = "lightblue",
     colour = "darkblue") +
   geom_density(
@@ -256,23 +271,218 @@ theme(
     axis.title = element_text(size = 5),
     axis.text = element_text(size = 2))
 
-g1+g2+g3+g4+g5+g6+g7+g8 + 
-plot_layout(nrow = 3, ncol = 3) +
-plot_annotation(
-  title = "Figura 2: Histogramas das variáveis em análise.",
-  # subtitle = "",
+(g1+g2)/(g3+g4) + plot_annotation(
+  title = "Figura 2: Histogramas das variáveis em análise."
+ ) & theme_bw(base_size = 10) &
+  theme(
+    plot.tag.position = c(0, 1),
+    plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
+  )
+
+(g5+g6)/(g7+g8) + plot_annotation(
   caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
-  # tag_levels = c("A", "1"), tag_prefix = "Sub Fig. ", tag_sep = ".",
-  # tag_levels = "A",
-  # tag_suffix = ":"
-) & theme_bw() &
+) & theme_bw(base_size = 10) &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
   )
 ```
 
-## Dados tratados
+<!-- ### Dispersão -->
+
+A fim de avaliar a correlação entre a variável de interesse (Nível de Diabetes) com as demais variáveis, foram construídos gráficos de dispersão para realização desta avaliação.
+
+```{r}
+#| echo: false
+#| warning: false
+
+#### Dispersão ----
+d1 <- dados |>
+  ggplot(aes(
+    y = diabetes, 
+    x = pregnant, color = pregnant)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x N° de Gestações',
+    y = 'Nível da Função Diabética',
+    x = 'N° de Gestações',
+    color = "N° de Gestações"
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d2 <- dados |>
+  ggplot(aes(
+    y = diabetes, 
+    x = glucose, color = glucose)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x N. Glicose',
+    x = 'Nível de Glicose',
+    y = 'Nível da Função Diabética',
+    color = "N° de Gestações"
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d3 <- dados |>
+  ggplot(aes(
+    y = diabetes, 
+    x = diastolic, color = diastolic)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x P. Diastólica',
+    x = 'Pressão Diastólica',
+    y = 'Nível da Função Diabética',
+    color = "N° de Gestações"
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d4 <- dados |>
+  ggplot(aes(
+    y = diabetes, 
+    x = triceps, color = triceps)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x L. Tríceps',
+    x = 'Largura do Tríceps (mm)',
+    y = 'Nível da Função Diabética',
+    color = "N° de Gestações"
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d5 <- dados |>
+  ggplot(aes(
+    y = diabetes, 
+    x = insulin, color = insulin)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x N. Insulina',
+    x = 'Nível de Insulina',
+    y = 'Nível da Função Diabética',
+    color = "N° de Gestações"
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d6 <- dados |>
+  ggplot(aes(
+    y = diabetes, 
+    x = age, color = age)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x Idade',
+    x = 'Idade',
+    y = 'Nível da Função Diabética',
+    color = "N° de Gestações"
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d7 <- dados |>
+  ggplot(aes(
+    y = diabetes, 
+    x = bmi, color = bmi)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x IMC',
+    x = 'IMC',
+    y = 'Nível da Função Diabética',
+    color = "N° de Gestações"
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+```
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+(d1+d2)/(d3+d4)+
+  plot_annotation(
+    title = "Figura 3: Relação entre Diabetes e demais medições ",
+  ) & theme_bw(base_size = 10) &
+  theme(
+    plot.tag.position = c(0, 1),
+    plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
+    legend.position = "none"
+  )
+
+(d5+d6)/(d7+plot_spacer())+
+  plot_annotation(
+    caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
+  ) & theme_bw(base_size = 10) &
+  theme(
+    plot.tag.position = c(0, 1),
+    plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
+    legend.position = "none"
+  )
+```
+
+
+
+
+### Dados tratados
 
 ```{r}
 #| echo: false
@@ -298,7 +508,7 @@ dados|>
       align = "c", 
       row.names = T,
       col.names =
-        c("Min", "Q1", "Med", "Média", "Q3", "Max", "Desvio Padrão", "CV")
+        c("Min", "Q1", "Med", "Média", "Q3", "Max", "D. Padrão", "CV")
     )|>
     kable_styling(
       # bootstrap_options = c("striped", "hover"),
@@ -307,7 +517,7 @@ dados|>
       full_width = F,
       fixed_thead = T
     ) %>%
-    footnote(general = "Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA") |>
+    footnote(general = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA") |>
     kable_material()
 ```
 
@@ -509,26 +719,214 @@ g16 <- dados|>
 ```{r}
 #| echo: false
 #| warning: false
-g9+g10+g11+g12+g13+g14+g15+g16 + 
-  plot_layout(nrow = 3, ncol = 3) + 
-  plot_annotation(
+(g9+g10)/(g11+g12) + plot_annotation(
   title = "Figura 4: Histogramas das variáveis em análise.",
-  # subtitle = "",
-  caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
-  # tag_levels = c("A", "1"), tag_prefix = "Sub Fig. ", tag_sep = ".",
-  # tag_levels = "A",
-  # tag_suffix = ":"
 ) & theme_bw() &
   theme(
     plot.tag.position = c(0, 1),
-    plot.tag = element_text(size = 8, hjust = 0, vjust = 0),
-    axis.title = element_text(size = 10),
-    axis.text = element_text(size = 7)
+    plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
+  )
+
+(g13+g14)/(g15+g16) + plot_annotation(
+  caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
+) & theme_bw() &
+  theme(
+    plot.tag.position = c(0, 1),
+    plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
   )
 ```
 
 
-## Boxplot
+<!-- ## Gráficos de Dispesão -->
+
+```{r}
+#| echo: false
+#| warning: false
+d8 <- dados|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
+  ggplot(aes(
+    y = diabetes, 
+    x = pregnant, color = pregnant)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x N° de Gestações',
+    y = 'Nível da Função Diabética',
+    x = 'N° de Gestações'
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d9 <- dados|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
+  ggplot(aes(
+    y = diabetes, 
+    x = glucose, color = glucose)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x N. Glicose',
+    x = 'Nível de Glicose',
+    y = 'Nível da Função Diabética'
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d10 <- dados|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
+  ggplot(aes(
+    y = diabetes, 
+    x = diastolic, color = diastolic)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x P. Diastólica',
+    x = 'Pressão Diastólica',
+    y = 'Nível da Função Diabética'
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d11 <- dados|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
+  ggplot(aes(
+    y = diabetes, 
+    x = triceps, color = triceps)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x L. Tríceps',
+    x = 'Largura do Tríceps (mm)',
+    y = 'Nível da Função Diabética'
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d12 <- dados|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
+  ggplot(aes(
+    y = diabetes, 
+    x = insulin, color = insulin)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x N. Insulina',
+    x = 'Nível de Insulina',
+    y = 'Nível da Função Diabética'
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d13 <- dados|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
+  ggplot(aes(
+    y = diabetes, 
+    x = age, color = age)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x Idade',
+    x = 'Idade',
+    y = 'Nível da Função Diabética'
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+d14 <- dados|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
+  ggplot(aes(
+    y = diabetes, 
+    x = bmi, color = bmi)) +
+  geom_point()+
+  labs(
+    title = 'Função Diadética x IMC',
+    x = 'IMC',
+    y = 'Nível da Função Diabética'
+  )+
+  scale_x_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))+
+  scale_y_continuous(
+    labels = scales::number_format(
+      big.mark = ".",
+      decimal.mark = ","
+    ))
+
+(d8+d9)/(d10+d11)+
+  plot_annotation(
+    title = "Figura : Diagramas de Dispersão das variáveis em análise.",
+  ) & theme_bw(base_size = 10) &
+  theme(
+    plot.tag.position = c(0, 1),
+    plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
+    legend.position = "none"
+  )
+
+(d12+d13)/(d14+plot_spacer()) +
+  plot_annotation(
+    caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
+  ) & theme_bw(base_size = 10) &
+  theme(
+    plot.tag.position = c(0, 1),
+    plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
+    legend.position = "none"
+  )
+```
+
+
+
+<!-- ## Boxplot -->
 
 ```{r}
 #| echo: false
@@ -714,7 +1112,7 @@ b8 <- dados|>
   )
 ```
 
-
+:::
 
 
 

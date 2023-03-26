@@ -6,16 +6,16 @@ title: "| UNIVERSIDADE FEDERAL DA BAHIA \n| INSTITUTO DE MATEMÁTICA E ESTATÍST
 output:
   pdf_document:
     toc: yes
-  word_document:
-    toc: yes
-  html_document:
-    highlight: textmate
-    includes: null
-    teme: flatly
-    toc: yes
-    toc_float:
-      collapsed: yes
-      smooth_scroll: no
+  # word_document:
+  #   toc: yes
+  # html_document:
+  #   highlight: textmate
+  #   includes: null
+  #   teme: flatly
+  #   toc: yes
+  #   toc_float:
+  #     collapsed: yes
+  #     smooth_scroll: no
 --- 
 
 ```{r, include=FALSE}

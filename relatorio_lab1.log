@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.21)  26 MAR 2023 00:00
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.21)  26 MAR 2023 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -399,91 +399,74 @@ File: svgnam.def 2022/06/12 v2.14 Predefined colors according to SVG 1.1 (UK)
 ) (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
 File: x11nam.def 2022/06/12 v2.14 Predefined colors according to Unix/X11 (UK)
 ))
-(c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.s
-ty
-Package: fancyvrb 2023/01/19 4.5a verbatim text (tvz,hv)
-\FV@CodeLineNo=\count289
-\FV@InFile=\read2
-\FV@TabBox=\box57
-\c@FancyVerbLine=\count290
-\FV@StepNumber=\count291
-\FV@OutFile=\write3
-) (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip67
-\fb@frw=\dimen154
-\fb@frh=\dimen155
-\FrameRule=\dimen156
-\FrameSep=\dimen157
-)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip68
-\LTright=\skip69
-\LTpre=\skip70
-\LTpost=\skip71
-\LTchunksize=\count292
-\LTcapwidth=\dimen158
-\LT@head=\box58
-\LT@firsthead=\box59
-\LT@foot=\box60
-\LT@lastfoot=\box61
-\LT@gbox=\box62
-\LT@cols=\count293
-\LT@rows=\count294
-\c@LT@tables=\count295
-\c@LT@chunks=\count296
+\LTleft=\skip67
+\LTright=\skip68
+\LTpre=\skip69
+\LTpost=\skip70
+\LTchunksize=\count289
+\LTcapwidth=\dimen154
+\LT@head=\box57
+\LT@firsthead=\box58
+\LT@foot=\box59
+\LT@lastfoot=\box60
+\LT@gbox=\box61
+\LT@cols=\count290
+\LT@rows=\count291
+\c@LT@tables=\count292
+\c@LT@chunks=\count293
 \LT@p@ftn=\toks24
 )
-Class scrartcl Info: longtable captions redefined on input line 98.
+Class scrartcl Info: longtable captions redefined on input line 58.
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.s
 ty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen159
-\lightrulewidth=\dimen160
-\cmidrulewidth=\dimen161
-\belowrulesep=\dimen162
-\belowbottomsep=\dimen163
-\aboverulesep=\dimen164
-\abovetopsep=\dimen165
-\cmidrulesep=\dimen166
-\cmidrulekern=\dimen167
-\defaultaddspace=\dimen168
-\@cmidla=\count297
-\@cmidlb=\count298
-\@aboverulesep=\dimen169
-\@belowrulesep=\dimen170
-\@thisruleclass=\count299
-\@lastruleclass=\count300
-\@thisrulewidth=\dimen171
+\heavyrulewidth=\dimen155
+\lightrulewidth=\dimen156
+\cmidrulewidth=\dimen157
+\belowrulesep=\dimen158
+\belowbottomsep=\dimen159
+\aboverulesep=\dimen160
+\abovetopsep=\dimen161
+\cmidrulesep=\dimen162
+\cmidrulekern=\dimen163
+\defaultaddspace=\dimen164
+\@cmidla=\count294
+\@cmidlb=\count295
+\@aboverulesep=\dimen165
+\@belowrulesep=\dimen166
+\@thisruleclass=\count296
+\@lastruleclass=\count297
+\@thisrulewidth=\dimen167
 ) (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen172
-\ar@mcellbox=\box63
-\extrarowheight=\dimen173
+\col@sep=\dimen168
+\ar@mcellbox=\box62
+\extrarowheight=\dimen169
 \NC@list=\toks25
-\extratabsurround=\skip72
-\backup@length=\skip73
-\ar@cellbox=\box64
+\extratabsurround=\skip71
+\backup@length=\skip72
+\ar@cellbox=\box63
 ) (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count301
-\calc@Bcount=\count302
-\calc@Adimen=\dimen174
-\calc@Bdimen=\dimen175
-\calc@Askip=\skip74
-\calc@Bskip=\skip75
+\calc@Acount=\count298
+\calc@Bcount=\count299
+\calc@Adimen=\dimen170
+\calc@Bdimen=\dimen171
+\calc@Askip=\skip73
+\calc@Bskip=\skip74
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count303
-\calc@Cskip=\skip76
+\calc@Ccount=\count300
+\calc@Cskip=\skip75
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.s
 ty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box65
-\fn@width=\dimen176
+\fn@notes=\box64
+\fn@width=\dimen172
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.s
 ty
@@ -501,38 +484,38 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 107.
 )
-\Gin@req@height=\dimen177
-\Gin@req@width=\dimen178
+\Gin@req@height=\dimen173
+\Gin@req@width=\dimen174
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.s
 ty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip77
-\multirow@cntb=\count304
-\multirow@dima=\skip78
-\bigstrutjot=\dimen179
+\multirow@colwidth=\skip76
+\multirow@cntb=\count301
+\multirow@dima=\skip77
+\bigstrutjot=\dimen175
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen180
-\WF@size=\dimen181
-\c@WF@wrappedlines=\count305
-\WF@box=\box66
+\wrapoverhang=\dimen176
+\WF@size=\dimen177
+\c@WF@wrappedlines=\count302
+\WF@box=\box65
 \WF@everypar=\toks26
 Package: wrapfig 2003/01/31  v 3.6
 ) (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count306
+\c@float@type=\count303
 \float@exts=\toks27
-\float@box=\box67
+\float@box=\box66
 \@float@everytoks=\toks28
-\@floatcapt=\box68
+\@floatcapt=\box67
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.s
 ty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 \everycr=\toks29
-\minrowclearance=\skip79
-\rownum=\count307
+\minrowclearance=\skip78
+\rownum=\count304
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape
 .sty
@@ -554,38 +537,38 @@ Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.s
 ty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box69
-\sift@deathcycles=\count308
-\@vwid@loff=\dimen182
-\@vwid@roff=\dimen183
+\@vwid@box=\box68
+\sift@deathcycles=\count305
+\@vwid@loff=\dimen178
+\@vwid@roff=\dimen179
 )
-\c@taburow=\count309
-\tabu@nbcols=\count310
-\tabu@cnt=\count311
-\tabu@Xcol=\count312
-\tabu@alloc=\count313
-\tabu@nested=\count314
-\tabu@target=\dimen184
-\tabu@spreadtarget=\dimen185
-\tabu@naturalX=\dimen186
-\tabucolX=\dimen187
-\tabu@Xsum=\dimen188
-\extrarowdepth=\dimen189
-\abovetabulinesep=\dimen190
-\belowtabulinesep=\dimen191
-\tabustrutrule=\dimen192
+\c@taburow=\count306
+\tabu@nbcols=\count307
+\tabu@cnt=\count308
+\tabu@Xcol=\count309
+\tabu@alloc=\count310
+\tabu@nested=\count311
+\tabu@target=\dimen180
+\tabu@spreadtarget=\dimen181
+\tabu@naturalX=\dimen182
+\tabucolX=\dimen183
+\tabu@Xsum=\dimen184
+\extrarowdepth=\dimen185
+\abovetabulinesep=\dimen186
+\belowtabulinesep=\dimen187
+\tabustrutrule=\dimen188
 \tabu@thebody=\toks30
 \tabu@footnotes=\toks31
-\tabu@box=\box70
-\tabu@arstrutbox=\box71
-\tabu@hleads=\box72
-\tabu@vleads=\box73
-\tabu@cellskip=\skip80
+\tabu@box=\box69
+\tabu@arstrutbox=\box70
+\tabu@hleads=\box71
+\tabu@vleads=\box72
+\tabu@cellskip=\skip79
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/thre
 eparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box74
+\@tempboxb=\box73
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/thr
 eeparttablex.sty
@@ -598,24 +581,24 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 es.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip81
+\TPTL@width=\skip80
 ) (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box75
-\UL@hyphenbox=\box76
-\UL@skip=\skip82
+\UL@box=\box74
+\UL@hyphenbox=\box75
+\UL@skip=\skip81
 \UL@hook=\toks32
-\UL@height=\dimen193
-\UL@pe=\count315
-\UL@pixel=\dimen194
-\ULC@box=\box77
+\UL@height=\dimen189
+\UL@pe=\count312
+\UL@pixel=\dimen190
+\ULC@box=\box76
 Package: ulem 2019/11/18
-\ULdepth=\dimen195
+\ULdepth=\dimen191
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.s
 ty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen196
-\c@nlinenum=\count316
+\rotheadsize=\dimen192
+\c@nlinenum=\count313
 \TeXr@lab=\toks33
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
@@ -624,14 +607,14 @@ Package: caption 2023/03/12 v3.6j Customizing captions (AR)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption3.st
 y
 Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
-\caption@tempdima=\dimen197
-\captionmargin=\dimen198
-\caption@leftmargin=\dimen199
-\caption@rightmargin=\dimen256
-\caption@width=\dimen257
-\caption@indent=\dimen258
-\caption@parindent=\dimen259
-\caption@hangindent=\dimen260
+\caption@tempdima=\dimen193
+\captionmargin=\dimen194
+\caption@leftmargin=\dimen195
+\caption@rightmargin=\dimen196
+\caption@width=\dimen197
+\caption@indent=\dimen198
+\caption@parindent=\dimen199
+\caption@hangindent=\dimen256
 Package caption Info: KOMA-Script document class detected.
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption-kom
@@ -639,8 +622,8 @@ a.sto
 File: caption-koma.sto 2022/12/27 v2.0c Adaption of the caption package to the 
 KOMA-Script document classes (AR)
 ))
-\c@caption@flags=\count317
-\c@continuedfloat=\count318
+\c@caption@flags=\count314
+\c@continuedfloat=\count315
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
 
@@ -649,21 +632,21 @@ ty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: KOMA-Script scrextend package detected.
-\caption@addmargin@hsize=\dimen261
-\caption@addmargin@linewidth=\dimen262
+\caption@addmargin@hsize=\dimen257
+\caption@addmargin@linewidth=\dimen258
 Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
 \@float@every@codelisting=\toks34
-\c@codelisting=\count319
+\c@codelisting=\count316
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/subcaption.
 sty
 Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 239.
-\c@subfigure=\count320
+\c@subfigure=\count317
 Package caption Info: New subtype `subtable' on input line 239.
-\c@subtable=\count321
+\c@subtable=\count318
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbox
 .sty
@@ -676,12 +659,12 @@ s.sty
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgf
 util-common.tex
 \pgfutil@everybye=\toks35
-\pgfutil@tempdima=\dimen263
-\pgfutil@tempdimb=\dimen264
+\pgfutil@tempdima=\dimen259
+\pgfutil@tempdimb=\dimen260
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgf
 util-latex.def
-\pgfutil@abb=\box78
+\pgfutil@abb=\box77
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgf
 rcs.code.tex
@@ -708,26 +691,26 @@ keys.code.tex
 keyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks38
 ))
-\pgf@x=\dimen265
-\pgf@y=\dimen266
-\pgf@xa=\dimen267
-\pgf@ya=\dimen268
-\pgf@xb=\dimen269
-\pgf@yb=\dimen270
-\pgf@xc=\dimen271
-\pgf@yc=\dimen272
-\pgf@xd=\dimen273
-\pgf@yd=\dimen274
-\w@pgf@writea=\write4
-\r@pgf@reada=\read3
-\c@pgf@counta=\count322
-\c@pgf@countb=\count323
-\c@pgf@countc=\count324
-\c@pgf@countd=\count325
+\pgf@x=\dimen261
+\pgf@y=\dimen262
+\pgf@xa=\dimen263
+\pgf@ya=\dimen264
+\pgf@xb=\dimen265
+\pgf@yb=\dimen266
+\pgf@xc=\dimen267
+\pgf@yc=\dimen268
+\pgf@xd=\dimen269
+\pgf@yd=\dimen270
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count319
+\c@pgf@countb=\count320
+\c@pgf@countc=\count321
+\c@pgf@countd=\count322
 \t@pgf@toka=\toks39
 \t@pgf@tokb=\toks40
 \t@pgf@tokc=\toks41
-\pgf@sys@id@count=\count326
+\pgf@sys@id@count=\count323
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/p
 gf.cfg
@@ -747,13 +730,13 @@ File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
 gfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )
-\pgfsys@objnum=\count327
+\pgfsys@objnum=\count324
 )))
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/p
 gfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count328
-\pgfsyssoftpath@bigbuffer@items=\count329
+\pgfsyssoftpath@smallbuffer@items=\count325
+\pgfsyssoftpath@bigbuffer@items=\count326
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/p
 gfsysprotocol.code.tex
@@ -769,9 +752,9 @@ code.tex
 til.code.tex)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathp
 arser.code.tex
-\pgfmath@dimen=\dimen275
-\pgfmath@count=\count330
-\pgfmath@box=\box79
+\pgfmath@dimen=\dimen271
+\pgfmath@count=\count327
+\pgfmath@box=\box78
 \pgfmath@toks=\toks42
 \pgfmath@stack@operand=\toks43
 \pgfmath@stack@operation=\toks44
@@ -798,59 +781,59 @@ unctions.integerarithmetics.code.tex)
 alc.code.tex)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathf
 loat.code.tex
-\c@pgfmathroundto@lastzeros=\count331
+\c@pgfmathroundto@lastzeros=\count328
 ))
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.c
 ode.tex)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen276
-\pgf@picmaxx=\dimen277
-\pgf@picminy=\dimen278
-\pgf@picmaxy=\dimen279
-\pgf@pathminx=\dimen280
-\pgf@pathmaxx=\dimen281
-\pgf@pathminy=\dimen282
-\pgf@pathmaxy=\dimen283
-\pgf@xx=\dimen284
-\pgf@xy=\dimen285
-\pgf@yx=\dimen286
-\pgf@yy=\dimen287
-\pgf@zx=\dimen288
-\pgf@zy=\dimen289
+\pgf@picminx=\dimen272
+\pgf@picmaxx=\dimen273
+\pgf@picminy=\dimen274
+\pgf@picmaxy=\dimen275
+\pgf@pathminx=\dimen276
+\pgf@pathmaxx=\dimen277
+\pgf@pathminy=\dimen278
+\pgf@pathmaxy=\dimen279
+\pgf@xx=\dimen280
+\pgf@xy=\dimen281
+\pgf@yx=\dimen282
+\pgf@yy=\dimen283
+\pgf@zx=\dimen284
+\pgf@zy=\dimen285
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen290
-\pgf@path@lasty=\dimen291
+\pgf@path@lastx=\dimen286
+\pgf@path@lasty=\dimen287
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen292
-\pgf@shorten@start@additional=\dimen293
+\pgf@shorten@end@additional=\dimen288
+\pgf@shorten@start@additional=\dimen289
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box80
-\pgf@hbox=\box81
-\pgf@layerbox@main=\box82
-\pgf@picture@serial@count=\count332
+\pgfpic=\box79
+\pgf@hbox=\box80
+\pgf@layerbox@main=\box81
+\pgf@picture@serial@count=\count329
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen294
+\pgflinewidth=\dimen290
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen295
-\pgf@pt@y=\dimen296
-\pgf@pt@temp=\dimen297
+\pgf@pt@x=\dimen291
+\pgf@pt@y=\dimen292
+\pgf@pt@temp=\dimen293
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcorequick.code.tex
@@ -867,14 +850,14 @@ File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen298
+\pgfarrowsep=\dimen294
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen299
-\pgf@sys@shading@range@num=\count333
-\pgf@shadingcount=\count334
+\pgf@max=\dimen295
+\pgf@sys@shading@range@num=\count330
+\pgf@shadingcount=\count331
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcoreimage.code.tex
@@ -883,7 +866,7 @@ File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box83
+\pgfexternal@startupbox=\box82
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcorelayers.code.tex
@@ -904,7 +887,7 @@ File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmo
 duleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box84
+\pgfnodeparttextbox=\box83
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmo
 duleplot.code.tex
@@ -913,8 +896,8 @@ File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/p
 gfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen300
-\pgf@nodesepend=\dimen301
+\pgf@nodesepstart=\dimen296
+\pgf@nodesepend=\dimen297
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/p
 gfcomp-version-1-18.sty
@@ -924,19 +907,19 @@ ty
 Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks45
 \verbatim@line=\toks46
-\verbatim@in@stream=\read4
+\verbatim@in@stream=\read3
 )
-\tcb@titlebox=\box85
-\tcb@upperbox=\box86
-\tcb@lowerbox=\box87
-\tcb@phantombox=\box88
-\c@tcbbreakpart=\count335
-\c@tcblayer=\count336
-\c@tcolorbox@number=\count337
+\tcb@titlebox=\box84
+\tcb@upperbox=\box85
+\tcb@lowerbox=\box86
+\tcb@phantombox=\box87
+\c@tcbbreakpart=\count332
+\c@tcblayer=\count333
+\c@tcolorbox@number=\count334
+\tcb@temp=\box88
 \tcb@temp=\box89
 \tcb@temp=\box90
 \tcb@temp=\box91
-\tcb@temp=\box92
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskins.
 code.tex
@@ -957,8 +940,8 @@ code.tex))
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgf
 for.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen302
-\pgffor@skip=\dimen303
+\pgffor@iter=\dimen298
+\pgffor@skip=\dimen299
 \pgffor@stack=\toks47
 \pgffor@toks=\toks48
 ))
@@ -969,34 +952,34 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgf
 libraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count338
-\pgfplotmarksize=\dimen304
+\pgf@plot@mark@count=\count335
+\pgfplotmarksize=\dimen300
 )
-\tikz@lastx=\dimen305
-\tikz@lasty=\dimen306
-\tikz@lastxsaved=\dimen307
-\tikz@lastysaved=\dimen308
-\tikz@lastmovetox=\dimen309
-\tikz@lastmovetoy=\dimen310
-\tikzleveldistance=\dimen311
-\tikzsiblingdistance=\dimen312
-\tikz@figbox=\box93
-\tikz@figbox@bg=\box94
-\tikz@tempbox=\box95
-\tikz@tempbox@bg=\box96
-\tikztreelevel=\count339
-\tikznumberofchildren=\count340
-\tikznumberofcurrentchild=\count341
-\tikz@fig@count=\count342
+\tikz@lastx=\dimen301
+\tikz@lasty=\dimen302
+\tikz@lastxsaved=\dimen303
+\tikz@lastysaved=\dimen304
+\tikz@lastmovetox=\dimen305
+\tikz@lastmovetoy=\dimen306
+\tikzleveldistance=\dimen307
+\tikzsiblingdistance=\dimen308
+\tikz@figbox=\box92
+\tikz@figbox@bg=\box93
+\tikz@tempbox=\box94
+\tikz@tempbox@bg=\box95
+\tikztreelevel=\count336
+\tikznumberofchildren=\count337
+\tikznumberofcurrentchild=\count338
+\tikz@fig@count=\count339
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmo
 dulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count343
-\pgfmatrixcurrentcolumn=\count344
-\pgf@matrix@numberofcolumns=\count345
+\pgfmatrixcurrentrow=\count340
+\pgfmatrixcurrentcolumn=\count341
+\pgf@matrix@numberofcolumns=\count342
 )
-\tikz@expandcount=\count346
+\tikz@expandcount=\count343
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer
 /tikz/libraries/tikzlibrarytopaths.code.tex
@@ -1013,7 +996,7 @@ Package: tikzfill-common 2022/07/20 v1.0.0 Auxiliary code for tikzfill
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzlibrar
 yfill.image.code.tex
 File: tikzlibraryfill.image.code.tex 2022/07/20 v1.0.0 Image filling library
-\l__tikzfill_img_box=\box97
+\l__tikzfill_img_box=\box96
 ))
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskinsj
 igsaw.code.tex
@@ -1036,9 +1019,9 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdfcol Info: Interface disabled because of missing PDF mode of pdfTeX.
 )
 Package pdfcol Info: pdfTeX's color stacks are not available.
-\tcb@testbox=\box98
-\tcb@totalupperbox=\box99
-\tcb@totallowerbox=\box100
+\tcb@testbox=\box97
+\tcb@totalupperbox=\box98
+\tcb@totallowerbox=\box99
 ))
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.s
 ty
@@ -1094,11 +1077,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 .sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count347
+\c@section@level=\count344
 )
-\@linkdim=\dimen313
-\Hy@linkcounter=\count348
-\Hy@pagecounter=\count349
+\@linkdim=\dimen309
+\Hy@linkcounter=\count345
+\Hy@pagecounter=\count346
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
@@ -1111,7 +1094,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 .sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count350
+\Hy@SavedSpaceFactor=\count347
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
 )
@@ -1123,13 +1106,13 @@ Package hyperref Info: Plain pages OFF on input line 4192.
 Package hyperref Info: Backreferencing OFF on input line 4197.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4425.
-\c@Hy@tempcnt=\count351
+\c@Hy@tempcnt=\count348
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen314
+\XeTeXLinkMargin=\dimen310
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -1139,9 +1122,9 @@ calc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count352
-\Field@Width=\dimen315
-\Fld@charsize=\dimen316
+\Fld@menulength=\count349
+\Field@Width=\dimen311
+\Fld@charsize=\dimen312
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -1155,9 +1138,9 @@ ty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count353
-\c@Item=\count354
-\c@Hfootnote=\count355
+\Hy@abspage=\count350
+\c@Item=\count351
+\c@Hfootnote=\count352
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -1169,11 +1152,11 @@ nc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box101
-\c@Hy@AnnotLevel=\count356
-\HyField@AnnotCount=\count357
-\Fld@listcount=\count358
-\c@bookmark@seq@number=\count359
+\pdfm@box=\box100
+\c@Hy@AnnotLevel=\count353
+\HyField@AnnotCount=\count354
+\Fld@listcount=\count355
+\c@bookmark@seq@number=\count356
 
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/reru
 nfilecheck.sty
@@ -1192,60 +1175,60 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip83
+\Hy@SectionHShift=\skip82
 )
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdf
 m.def
 File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
-\BKM@id=\count360
+\BKM@id=\count357
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 203.
+Package hyperref Info: Option `colorlinks' set `true' on input line 163.
 No file relatorio_lab1.aux.
 \openout1 = `relatorio_lab1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-Package scrbase Info: activating english \abstractname on input line 210.
-Package scrbase Info: activating english \partname on input line 210.
-Package scrbase Info: activating english \figurename on input line 210.
-Package scrbase Info: activating english \tablename on input line 210.
-Package scrbase Info: activating english \contentsname on input line 210.
-Package scrbase Info: activating english \listfigurename on input line 210.
-Package scrbase Info: activating english \listtablename on input line 210.
-Package scrbase Info: activating english \refname on input line 210.
-Package scrbase Info: activating english \indexname on input line 210.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+Package scrbase Info: activating english \abstractname on input line 170.
+Package scrbase Info: activating english \partname on input line 170.
+Package scrbase Info: activating english \figurename on input line 170.
+Package scrbase Info: activating english \tablename on input line 170.
+Package scrbase Info: activating english \contentsname on input line 170.
+Package scrbase Info: activating english \listfigurename on input line 170.
+Package scrbase Info: activating english \listtablename on input line 170.
+Package scrbase Info: activating english \refname on input line 170.
+Package scrbase Info: activating english \indexname on input line 170.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 210.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 170.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 210.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 170.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 210.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 170.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 210.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 170.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 210.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 170.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 210.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 170.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 210.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 170.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -1274,7 +1257,7 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 210.
+(Font)              scaled to size 10.95pt on input line 170.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -1313,18 +1296,18 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 210.
+(Font)              scaled to size 10.95pt on input line 170.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 210.
+(Font)              `operators' in the math version `normal' on input line 170.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 210.
+ line 170.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 210.
+(Font)              `operators' in the math version `bold' on input line 170.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 210.
+t line 170.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -1411,15 +1394,15 @@ t=math;language=dflt;"
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 210.
+(Font)              `symbols' in the math version `normal' on input line 170.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 210.
+t line 170.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 210.
+(Font)              `symbols' in the math version `bold' on input line 170.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 210.
+t line 170.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -1488,23 +1471,23 @@ pt=math;language=dflt;"
 (fontspec)             =6.56999pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 2
-10.
+(Font)              `largesymbols' in the math version `normal' on input line 1
+70.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 210.
+t line 170.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 210
+(Font)              `largesymbols' in the math version `bold' on input line 170
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 210.
-LaTeX Info: Redefining \microtypecontext on input line 210.
-Package microtype Info: Applying patch `item' on input line 210.
-Package microtype Info: Applying patch `toc' on input line 210.
-Package microtype Info: Applying patch `eqnum' on input line 210.
-Package microtype Info: Applying patch `footnote' on input line 210.
-Package microtype Info: Applying patch `verbatim' on input line 210.
+t line 170.
+LaTeX Info: Redefining \microtypecontext on input line 170.
+Package microtype Info: Applying patch `item' on input line 170.
+Package microtype Info: Applying patch `toc' on input line 170.
+Package microtype Info: Applying patch `eqnum' on input line 170.
+Package microtype Info: Applying patch `footnote' on input line 170.
+Package microtype Info: Applying patch `verbatim' on input line 170.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1519,7 +1502,7 @@ ern Roman (RS)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 210.
+Package hyperref Info: Link coloring ON on input line 170.
 
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
@@ -1528,29 +1511,29 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 212.
+(Font)              scaled to size 14.4pt on input line 172.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 212.
+(Font)              scaled to size 10.0pt on input line 172.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 212.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-12.
+(Font)              scaled to size 7.0pt on input line 172.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+72.
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 212.
+(Font)              scaled to size 14.4013pt on input line 172.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 212.
+(Font)              scaled to size 10.00092pt on input line 172.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 212.
+(Font)              scaled to size 7.00064pt on input line 172.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 212.
+(Font)              scaled to size 14.39845pt on input line 172.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 212.
+(Font)              scaled to size 9.99893pt on input line 172.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 212.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 212
+(Font)              scaled to size 6.99925pt on input line 172.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 172
 .
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1559,7 +1542,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 g
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 212
+LaTeX Font Info:    Trying to load font information for U+msb on input line 172
 .
 (c:/Users/FOBi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1569,21 +1552,21 @@ g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.665pt on input line 234.
+(Font)              scaled to size 7.665pt on input line 194.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.475pt on input line 234.
+(Font)              scaled to size 5.475pt on input line 194.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95099pt on input line 234.
+(Font)              scaled to size 10.95099pt on input line 194.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.66568pt on input line 234.
+(Font)              scaled to size 7.66568pt on input line 194.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.4755pt on input line 234.
+(Font)              scaled to size 5.4755pt on input line 194.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 234.
+(Font)              scaled to size 10.94882pt on input line 194.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 234.
+(Font)              scaled to size 7.66417pt on input line 194.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 234.
+(Font)              scaled to size 5.47441pt on input line 194.
 
 ! Package xcolor Error: Undefined color `TRUE'.
 
@@ -1591,15 +1574,15 @@ See the xcolor package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.238 \cellcolor{TRUE}{Glicose} &
+l.198 \cellcolor{TRUE}{Glicose} &
                                   \cellcolor{TRUE}{0,00} & \cellcolor{TRUE}{...
  
 Here is how much of TeX's memory you used:
- 38583 strings out of 478662
- 804400 string characters out of 5845876
+ 38097 strings out of 478662
+ 796522 string characters out of 5845876
  1846012 words of memory out of 5000000
- 58116 multiletter control sequences out of 15000+600000
+ 57638 multiletter control sequences out of 15000+600000
  518800 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,9n,121p,10609b,395s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,9n,121p,10609b,396s stack positions out of 10000i,1000n,20000p,200000b,200000s
 No pages of output.

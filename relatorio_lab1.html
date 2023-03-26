@@ -41,11 +41,22 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
-<main class="content" id="quarto-document-content">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#apresentação" id="toc-apresentação" class="nav-link active" data-scroll-target="#apresentação">Apresentação</a></li>
+  <li><a href="#análise-descritiva" id="toc-análise-descritiva" class="nav-link" data-scroll-target="#análise-descritiva">Análise Descritiva</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -76,12 +87,27 @@ ul.task-list li input[type="checkbox"] {
 <!-- </style> -->
 <section id="apresentação" class="level2">
 <h2 class="anchored" data-anchor-id="apresentação">Apresentação</h2>
-<p>Este documento é um relatório referente a atividade de correlação e dispersão de características associadas a relação da concentração de glicose no plasma de mulheres da tribo Pina.</p>
+<p>Este relatório visa a descrição da análise realizada nos dados oriundos do Instituto Nacional de Diabetes e de Doenças Digestivas e Renais dos EUA que conduziram um estudo com 768 mulheres da tribo Pina, que residem próximo a Phoenix e coletaram as seguintes características das participantes do estudo:</p>
+<div class="incrementyal">
+<ul>
+<li>Número de gestações [<strong>pregnat</strong>];</li>
+<li>Concentração de glicose no plasma (obtido duas horas depois da realização de um teste de tolerância a glicose) [<strong>glucose</strong>]; pressão sanguínea diastólica (mmHg) [<strong>diastolic</strong>];</li>
+<li>Largura do tríceps (mm) [<strong>triceps</strong>];</li>
+<li>Nível de insulina (µU/ml) [<strong>insulin</strong>];</li>
+<li>Índice de massa corpórea (kg/m2) [<strong>bmi</strong>];</li>
+<li>Nível de função diabética [<strong>diabetes</strong>];</li>
+<li>Iidade em anos [<strong>age</strong>];</li>
+<li>Teste para avaliação de sinais de diabetes (0 = negativo e 1 = positivo) [<strong>teste</strong>].</li>
+</ul>
+</div>
 </section>
-<section id="dados-sem-tratamento" class="level2">
-<h2 class="anchored" data-anchor-id="dados-sem-tratamento">Dados sem tratamento</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<p>You can add options to executable code like this</p>
+<section id="análise-descritiva" class="level2">
+<h2 class="anchored" data-anchor-id="análise-descritiva">Análise Descritiva</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Dados sem tratamento</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Dados tratados</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Neste primeiro momento será realizada a análise das características sem nenhum tipo de tratativa dos dados, a fim de identificar padrões, partindo, a princípio, da tabela contendo as principais medidas de posição e dispersão.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table lightable-material table-sm table-striped small" data-quarto-postprocess="true">
@@ -95,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
 <th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">Média</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">Q3</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">Max</th>
-<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">Desvio Padrão</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">D.Padrão</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">CV</th>
 </tr>
 </thead>
@@ -201,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left; padding: 0;"><sup></sup> Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA</td>
+<td style="text-align: left; padding: 0;"><sup></sup> Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -218,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 </div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+<p>Conforme consta na Figura 1, cerca de 35% das participantes apresentaram resultado positivo para a presença de sinais de diabetes.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-3-1.png" class="quarto-discovered-preview-image img-fluid" width="672"></p>
@@ -228,10 +254,22 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
+<div class="cell-output-display">
+<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"></p>
 </div>
-</section>
-<section id="dados-tratados" class="level2">
-<h2 class="anchored" data-anchor-id="dados-tratados">Dados tratados</h2>
+</div>
+<!-- ### Dispersão -->
+<p>A fim de avaliar a correlação entre a variável de interesse (Nível de Diabetes) com as demais variáveis, foram construídos gráficos de dispersão para realização desta avaliação.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table lightable-material table-sm table-striped small" data-quarto-postprocess="true">
@@ -245,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
 <th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">Média</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">Q3</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">Max</th>
-<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">Desvio Padrão</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">D. Padrão</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF;">CV</th>
 </tr>
 </thead>
@@ -351,7 +389,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left; padding: 0;"><sup></sup> Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA</td>
+<td style="text-align: left; padding: 0;"><sup></sup> Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -370,23 +408,36 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
 <p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section>
-<section id="boxplot" class="level2">
-<h2 class="anchored" data-anchor-id="boxplot">Boxplot</h2>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" width="672"></p>
+<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<!-- ## Gráficos de Dispesão -->
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<!-- ## Boxplot -->
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="relatorio_lab1_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
