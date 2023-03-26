@@ -154,7 +154,7 @@
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={LABORATÓRIO 1: Relação da concentração de glicose no plasma com características diversas},
-  pdfauthor={Fernando, Jeff Caponero},
+  pdfauthor={Fernando Bispo, Jeff Caponero},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -164,36 +164,69 @@
 
 \title{LABORATÓRIO 1: Relação da concentração de glicose no plasma com
 características diversas}
-\author{Fernando, Jeff Caponero}
+\author{Fernando Bispo, Jeff Caponero}
 \date{}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, enhanced, sharp corners, borderline west={3pt}{0pt}{shadecolor}, interior hidden, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, breakable, interior hidden, frame hidden, boxrule=0pt, sharp corners, enhanced]}{\end{tcolorbox}}\fi
 
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
 \hypertarget{apresentauxe7uxe3o}{%
 \subsection{Apresentação}\label{apresentauxe7uxe3o}}
 
-Este documento é um relatório referente a atividade de correlação e
-dispersão de características associadas a relação da concentração de
-glicose no plasma de mulheres da tribo Pina.
+Este relatório visa a descrição da análise realizada nos dados oriundos
+do Instituto Nacional de Diabetes e de Doenças Digestivas e Renais dos
+EUA que conduziram um estudo com 768 mulheres da tribo Pina, que residem
+próximo a Phoenix e coletaram as seguintes características das
+participantes do estudo:
 
-\hypertarget{dados-sem-tratamento}{%
-\subsection{Dados sem tratamento}\label{dados-sem-tratamento}}
+\begin{itemize}
+\tightlist
+\item
+  Número de gestações {[}\textbf{pregnat}{]};
+\item
+  Concentração de glicose no plasma (obtido duas horas depois da
+  realização de um teste de tolerância a glicose)
+  {[}\textbf{glucose}{]}; pressão sanguínea diastólica (mmHg)
+  {[}\textbf{diastolic}{]};
+\item
+  Largura do tríceps (mm) {[}\textbf{triceps}{]};
+\item
+  Nível de insulina (µU/ml) {[}\textbf{insulin}{]};
+\item
+  Índice de massa corpórea (kg/m2) {[}\textbf{bmi}{]};
+\item
+  Nível de função diabética {[}\textbf{diabetes}{]};
+\item
+  Iidade em anos {[}\textbf{age}{]};
+\item
+  Teste para avaliação de sinais de diabetes (0 = negativo e 1 =
+  positivo) {[}\textbf{teste}{]}.
+\end{itemize}
 
-When you click the \textbf{Render} button a document will be generated
-that includes both content and the output of embedded code. You can
-embed code like this:
+\hypertarget{anuxe1lise-descritiva}{%
+\subsection{Análise Descritiva}\label{anuxe1lise-descritiva}}
 
-You can add options to executable code like this
+\subsubsection{Dados sem tratamento}
+
+Neste primeiro momento será realizada a análise das características sem
+nenhum tipo de tratativa dos dados, a fim de identificar padrões,
+partindo, a princípio, da tabela contendo as principais medidas de
+posição e dispersão.
 
 \begin{table}
 
-\caption{Tabela 1: Medidas Resumo}
+\caption{\label{tab:unnamed-chunk-2}Tabela 1: Medidas Resumo}
 \centering
-\begin{tabular}[t]{l|c|c|c|c|c|c|c|c}
+\begin{tabu} to \linewidth {>{\raggedright}X>{\centering}X>{\centering}X>{\centering}X>{\centering}X>{\centering}X>{\centering}X>{\centering}X>{\centering}X}
 \hline
-  & Min & Q1 & Med & Média & Q3 & Max & Desvio Padrão & CV\\
+  & Min & Q1 & Med & Média & Q3 & Max & D.Padrão & CV\\
 \hline
 \cellcolor{TRUE}{Glicose} & \cellcolor{TRUE}{0,00} & \cellcolor{TRUE}{99,00} & \cellcolor{TRUE}{117,00} & \cellcolor{TRUE}{120,89} & \cellcolor{TRUE}{140,50} & \cellcolor{TRUE}{199,00} & \cellcolor{TRUE}{31,97} & \cellcolor{TRUE}{0,26}\\
 \hline
@@ -212,12 +245,12 @@ Nivel Diabético & 0,08 & 0,24 & 0,37 & 0,47 & 0,63 & 2,42 & 0,33 & 0,70\\
 P. Diastólica & 0,00 & 62,00 & 72,00 & 69,11 & 80,00 & 122,00 & 19,36 & 0,28\\
 \hline
 \multicolumn{9}{l}{\rule{0pt}{1em}\textit{Note: }}\\
-\multicolumn{9}{l}{\rule{0pt}{1em}Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA}\\
-\end{tabular}
+\multicolumn{9}{l}{\rule{0pt}{1em}Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA}\\
+\end{tabu}
 \end{table}
 
-The \texttt{echo:\ false} option disables the printing of code (only
-output is displayed).
+Conforme consta na Figura 1, cerca de 35\% das participantes
+apresentaram resultado positivo para a presença de sinais de diabetes.
 
 \includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
@@ -225,16 +258,23 @@ output is displayed).
 
 \includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-4-2.pdf}
 
-\hypertarget{dados-tratados}{%
-\subsection{Dados tratados}\label{dados-tratados}}
+A fim de avaliar a correlação entre a variável de interesse (Nível de
+Diabetes) com as demais variáveis, foram construídos gráficos de
+dispersão para realização desta avaliação.
+
+\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-6-1.pdf}
+
+\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-6-2.pdf}
+
+\subsubsection{Dados tratados}
 
 \begin{table}
 
-\caption{Tabela 2: Medidas Resumo}
+\caption{\label{tab:unnamed-chunk-7}Tabela 2: Medidas Resumo}
 \centering
 \begin{tabular}[t]{l|c|c|c|c|c|c|c|c}
 \hline
-  & Min & Q1 & Med & Média & Q3 & Max & Desvio Padrão & CV\\
+  & Min & Q1 & Med & Média & Q3 & Max & D. Padrão & CV\\
 \hline
 \cellcolor{TRUE}{Glicose} & \cellcolor{TRUE}{56,00} & \cellcolor{TRUE}{99,00} & \cellcolor{TRUE}{119,00} & \cellcolor{TRUE}{122,63} & \cellcolor{TRUE}{143,00} & \cellcolor{TRUE}{198,00} & \cellcolor{TRUE}{30,86} & \cellcolor{TRUE}{0,25}\\
 \hline
@@ -253,20 +293,23 @@ Nivel Diabético & 0,09 & 0,27 & 0,45 & 0,52 & 0,69 & 2,42 & 0,35 & 0,66\\
 P. Diastólica & 24,00 & 62,00 & 70,00 & 70,66 & 78,00 & 110,00 & 12,50 & 0,18\\
 \hline
 \multicolumn{9}{l}{\rule{0pt}{1em}\textit{Note: }}\\
-\multicolumn{9}{l}{\rule{0pt}{1em}Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA}\\
+\multicolumn{9}{l}{\rule{0pt}{1em}Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA}\\
 \end{tabular}
 \end{table}
 
-\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-6-1.pdf}
-
 \includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-8-1.pdf}
 
-\hypertarget{boxplot}{%
-\subsection{Boxplot}\label{boxplot}}
+\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-10-1.pdf}
 
-\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-9-1.pdf}
+\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-10-2.pdf}
 
-\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-9-2.pdf}
+\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-11-1.pdf}
+
+\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-11-2.pdf}
+
+\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-12-1.pdf}
+
+\includegraphics{relatorio_lab1_files/figure-pdf/unnamed-chunk-12-2.pdf}
 
 
 

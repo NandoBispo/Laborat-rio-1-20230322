@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.21)  26 MAR 2023 11:43
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.21)  26 MAR 2023 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1551,22 +1551,54 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+Package tocbasic Info: character protrusion at toc deactivated on input line 17
+8.
+No file relatorio_lab1.toc.
+\tf@toc=\write4
+\openout4 = `relatorio_lab1.toc'.
+
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.665pt on input line 194.
+(Font)              scaled to size 7.665pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.475pt on input line 194.
+(Font)              scaled to size 5.475pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95099pt on input line 194.
+(Font)              scaled to size 10.95099pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.66568pt on input line 194.
+(Font)              scaled to size 7.66568pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.4755pt on input line 194.
+(Font)              scaled to size 5.4755pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 194.
+(Font)              scaled to size 10.94882pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 194.
+(Font)              scaled to size 7.66417pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 194.
+(Font)              scaled to size 5.47441pt on input line 227.
+
+Overfull \hbox (7.72585pt too wide) in paragraph at lines 249--249
+ []\TU/lmr/m/n/10.95 D.Padrão| 
+ []
+
+[1
+
+
+]
+File: relatorio_lab1_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type 
+pdf)
+<use relatorio_lab1_files/figure-pdf/unnamed-chunk-3-1.pdf>
+File: relatorio_lab1_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type 
+pdf)
+<use relatorio_lab1_files/figure-pdf/unnamed-chunk-4-1.pdf>
+[2]
+File: relatorio_lab1_files/figure-pdf/unnamed-chunk-4-2.pdf Graphic file (type 
+pdf)
+<use relatorio_lab1_files/figure-pdf/unnamed-chunk-4-2.pdf>
+File: relatorio_lab1_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type 
+pdf)
+<use relatorio_lab1_files/figure-pdf/unnamed-chunk-6-1.pdf>
+[3]
+File: relatorio_lab1_files/figure-pdf/unnamed-chunk-6-2.pdf Graphic file (type 
+pdf)
+<use relatorio_lab1_files/figure-pdf/unnamed-chunk-6-2.pdf>
 
 ! Package xcolor Error: Undefined color `TRUE'.
 
@@ -1574,15 +1606,15 @@ See the xcolor package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.198 \cellcolor{TRUE}{Glicose} &
-                                  \cellcolor{TRUE}{0,00} & \cellcolor{TRUE}{...
+l.279 \cellcolor{TRUE}{Glicose} &
+                                  \cellcolor{TRUE}{56,00} & \cellcolor{TRUE}...
  
 Here is how much of TeX's memory you used:
- 38097 strings out of 478662
- 796522 string characters out of 5845876
- 1846012 words of memory out of 5000000
- 57638 multiletter control sequences out of 15000+600000
- 518800 words of font info for 80 fonts, out of 8000000 for 9000
+ 38211 strings out of 478662
+ 800308 string characters out of 5845876
+ 1865012 words of memory out of 5000000
+ 57737 multiletter control sequences out of 15000+600000
+ 518816 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,9n,121p,10609b,396s stack positions out of 10000i,1000n,20000p,200000b,200000s
-No pages of output.
+ 108i,15n,121p,10609b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+Output written on relatorio_lab1.pdf (3 pages).

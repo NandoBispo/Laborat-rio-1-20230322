@@ -1,12 +1,14 @@
 ---
 title: "LABORATÓRIO 1: Relação da concentração de glicose no plasma com características diversas"
-author: Fernando, Jeff Caponero
-format: 
-  html:
-    toc: true
-    toc-location: left
-    page-layout: full
-    back-to-top-navigation: true
+author: Fernando Bispo, Jeff Caponero
+format:
+    pdf:
+      toc: true
+  # html:
+  #   toc: true
+  #   toc-location: left
+  #   page-layout: full
+
   # pdf:
   #   documentclass: scrartcl
   #   papersize: letter
@@ -1114,6 +1116,7 @@ b8 <- dados|>
 
 :::
 
+## Conclusão
 
 
 
