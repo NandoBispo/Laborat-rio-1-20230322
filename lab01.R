@@ -10,7 +10,7 @@ pacman::p_load(tidyverse, janitor, kableExtra, summarytools,
 # https://curso-r.githud.io/zen-do-r/git-githud.html
 gitcreds::gitcreds_set()
 usethis::use_git()
-usethis::use_githud()
+usethis::use_github()
 # _________________________________________________
 
 # DADOS ----
@@ -358,7 +358,7 @@ d1 <- dados |>
     x = pregnant, color = pregnant)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x N° de Gestações',
+    title = 'Função Diabética x N° de Gestações',
     y = 'Nível da Função Diabética',
     x = 'N° de Gestações',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -383,7 +383,7 @@ d2 <- dados |>
     x = glucose, color = glucose)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x N. Glicose',
+    title = 'Função Diabética x N. Glicose',
     x = 'Nível de Glicose',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -408,7 +408,7 @@ d3 <- dados |>
     x = diastolic, color = diastolic)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x P. Diastólica',
+    title = 'Função Diabética x P. Diastólica',
     x = 'Pressão Diastólica',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -433,7 +433,7 @@ d4 <- dados |>
     x = triceps, color = triceps)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x L. Tríceps',
+    title = 'Função Diabética x L. Tríceps',
     x = 'Largura do Tríceps (mm)',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -458,7 +458,7 @@ d5 <- dados |>
     x = insulin, color = insulin)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x N. Insulina',
+    title = 'Função Diabética x N. Insulina',
     x = 'Nível de Insulina',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -483,7 +483,7 @@ d6 <- dados |>
     x = age, color = age)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x Idade',
+    title = 'Função Diabética x Idade',
     x = 'Idade',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -508,7 +508,7 @@ d7 <- dados |>
     x = bmi, color = bmi)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x IMC',
+    title = 'Função Diabética x IMC',
     x = 'IMC',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -1051,7 +1051,7 @@ d8 <- dados|>
     x = pregnant, color = pregnant)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x N° de Gestações',
+    title = 'Função Diabética x N° de Gestações',
     y = 'Nível da Função Diabética',
     x = 'N° de Gestações',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -1078,7 +1078,7 @@ d9 <- dados|>
     x = glucose, color = glucose)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x N. Glicose',
+    title = 'Função Diabética x N. Glicose',
     x = 'Nível de Glicose',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -1105,7 +1105,7 @@ d10 <- dados|>
     x = diastolic, color = diastolic)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x P. Diastólica',
+    title = 'Função Diabética x P. Diastólica',
     x = 'Pressão Diastólica',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -1132,7 +1132,7 @@ d11 <- dados|>
     x = triceps, color = triceps)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x L. Tríceps',
+    title = 'Função Diabética x L. Tríceps',
     x = 'Largura do Tríceps (mm)',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -1159,7 +1159,7 @@ d12 <- dados|>
     x = insulin, color = insulin)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x N. Insulina',
+    title = 'Função Diabética x N. Insulina',
     x = 'Nível de Insulina',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -1186,7 +1186,7 @@ d13 <- dados|>
     x = age, color = age)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x Idade',
+    title = 'Função Diabética x Idade',
     x = 'Idade',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
@@ -1213,7 +1213,7 @@ d14 <- dados|>
     x = bmi, color = bmi)) +
   geom_point()+
   labs(
-    title = 'Função Diadética x IMC',
+    title = 'Função Diabética x IMC',
     x = 'IMC',
     y = 'Nível da Função Diabética',
     # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
