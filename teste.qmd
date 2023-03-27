@@ -1,31 +1,7 @@
 ---
-title: "LABORATÓRIO 1: Relação da concentração de glicose no plasma com características diversas"
-author: Fernando Bispo, Jeff Caponero
-format:
-  pdf:
-    documentclass: report
-    classoption: [twocolumn, landscape]
-    lof: true
-    lot: true
-    geometry:
-      - top=30mm
-      - left=20mm
-      - heightrounded
-    fontfamily: libertinus
-    colorlinks: true
-    # documentclass: scrartcl
-    # papersize: letter
-    # toc: true
-    # number-sections: true
-    # colorlinks: true
-  # html:
-  #   toc: true
-  #   toc-location: left
-  #   page-layout: full
-
-  # pdf:
-  #   documentclass: scrartcl
-  #   papersize: letter
+title: "teste"
+author: "Fernando Bispo"
+format: pdf
 ---
 
 ## Apresentação
@@ -44,12 +20,6 @@ pressão sanguínea diastólica (mmHg) [**diastolic**];
 - Iidade em anos [**age**];
 - Teste para avaliação de sinais de diabetes (0 = negativo e 1 = positivo) [**teste**].
 :::
-
-## Análise Descritiva
-::: {.panel-tabset}
-### Dados sem tratamento
-
-Neste primeiro momento será realizada a análise das características sem nenhum tipo de tratativa dos dados, a fim de identificar padrões, partindo, a princípio, da tabela contendo as principais medidas de posição e dispersão.
 
 ```{r}
 #| echo: false
@@ -86,7 +56,7 @@ dados|>
     summarytools::descr(
       stats = c("min", "q1", "med", "mean","q3", "max",  "sd", "cv"),
       justify = "c",
-      style = "grid", #' rmarkdown',
+      style = "grid",
       transpose = T
     ) |>
     kbl(
@@ -98,18 +68,19 @@ dados|>
       col.names =
         c("Min", "Q1", "Med", "Média", "Q3", "Max", "D.Padrão", "CV")
     )|>
-    kable_styling(
-      # bootstrap_options = c("striped", "hover"),
-      latex_options = c("striped"),
-      stripe_color = T,
-      full_width = T,
-      fixed_thead = T
-    ) %>%
-    footnote(general = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA") |>
-    kable_material()
+    # kable_styling(
+    #   # bootstrap_options = c("striped", "hover"),
+    #   latex_options = c("striped"),
+    #   stripe_color = T,
+    #   full_width = T,
+    #   fixed_thead = T
+    # ) %>%
+    footnote(general = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA")
+    # kable_material()
 ```
 
 Conforme consta na Figura 1, cerca de 35% das participantes apresentaram resultado positivo para a presença de sinais de diabetes.
+
 
 ```{r}
 #| echo: false
@@ -123,14 +94,15 @@ dados |>
       test == 0 ~ "Negativo",
       test == 1 ~ "Positivo"),
     labs = glue::glue('{tipo}\n({pct}%)')) %>%
-  ggpubr::ggdonutchart(., "pct", 
+  ggpubr::ggdonutchart(., "pct",
                        label = "labs", lab.pos = "in",
                        lab.font = c(4, "plain", "white"),
                        fill = "test",  color = "white")+
   labs(
-    title = "Figura 1: Resultado dos testes de sinais \nde diabetes realizados nas mulheres \nda Tribo Pina",
+    title = "Figura 1: Resultado dos testes de sinais de diabetes realizados \nnas mulheres da Tribo Pina",
     caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
   )+
+  theme_void(base_size = 9)+
   theme(
     legend.position = "none"
   )
@@ -462,78 +434,66 @@ d7 <- dados |>
       big.mark = ".",
       decimal.mark = ","
     ))
-```
-
-
-
-```{r}
-#| echo: false
-#| warning: false
 
 (d1+d2)/(d3+d4)+
   plot_annotation(
     title = "Figura 3: Relação entre Diabetes e demais medições ",
-  ) & theme_bw(base_size = 10) &
+  ) & theme_bw(base_size = 7) &
   theme(
-    plot.tag.position = c(0, 1),
-    plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
+    # plot.tag.position = c(0, 1),
+    # plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
     legend.position = "none"
   )
 
 (d5+d6)/(d7+plot_spacer())+
   plot_annotation(
     caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
-  ) & theme_bw(base_size = 10) &
+  ) & theme_bw(base_size = 7) &
   theme(
-    plot.tag.position = c(0, 1),
-    plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
+    # plot.tag.position = c(0, 1),
+    # plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
     legend.position = "none"
   )
 ```
-
-
-
 
 ### Dados tratados
 
 ```{r}
 #| echo: false
 #| warning: false
+
 dados|>
-  filter(glucose>0, diabetes>0, diastolic>0,
+  select(-test)|>
+  filter(glucose!=0, diabetes!=0, diastolic>0,
          triceps>0, insulin>0, bmi>0)|>
-    select(-test)|>
-    rename(
+  rename(
       "N° de Gestações" = pregnant, "Glicose" = glucose, "Idade" = age,
       "P. Diastólica" = diastolic, "Largura Triceps" = triceps,
       "Nível Insulina" = insulin, "IMC" = bmi, "Nivel Diabético" = diabetes)|>
-    summarytools::descr(
+  summarytools::descr(
       stats = c("min", "q1", "med", "mean","q3", "max",  "sd", "cv"),
       justify = "c",
-      style = "grid", #' rmarkdown',
+      style = "grid",
       transpose = T
-    ) |>
-    kbl(
-      caption = "Tabela 2: Medidas Resumo",
-      digits = 2,
-      format.args=list(big.mark=".", decimal.mark=","),
-      align = "c", 
-      row.names = T,
-      col.names =
-        c("Min", "Q1", "Med", "Média", "Q3", "Max", "D. Padrão", "CV")
-    )|>
-    kable_styling(
-      # bootstrap_options = c("striped", "hover"),
-      latex_options = c("striped"),
-      stripe_color = T,
-      full_width = F,
-      fixed_thead = T
-    ) %>%
-    footnote(general = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA") |>
-    kable_material()
+  )|>
+  kbl(
+    caption = "Tabela 2: Medidas Resumo",
+    digits = 2,
+    format.args=list(big.mark=".", decimal.mark=","),
+    align = "c",
+    row.names = T,
+    col.names =
+      c("Min", "Q1", "Med", "Média", "Q3", "Max", "D. Padrão", "CV")
+  )|>
+#   kable_styling(
+#     latex_options = c("striped"),
+#     stripe_color = T,
+#     full_width = F,
+#     fixed_thead = T
+#   ) %>%
+  footnote(general = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA")
+#   kable_material()
 ```
-
-
 
 ```{r}
 #| echo: false
@@ -551,12 +511,13 @@ dados|>
     labs = glue::glue('{tipo}\n({pct}%)')) %>%
   ggpubr::ggdonutchart(., "pct", 
                        label = "labs", lab.pos = "in",
-                       lab.font = c(4, "plain", "white"),
+                       lab.font = c(3, "plain", "white"),
                        fill = "test",  color = "white")+
   labs(
-    title = "Figura 3: Resultado dos testes de sinais \nde diabetes realizados nas mulheres \nda Tribo Pina",
-    caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
+    title = "Figura 3: Resultado dos testes de sinais de diabetes realizados \nnas mulheres da Tribo Pina",
+    caption = "Fonte: Instituto Nacional de Diabetes e de Doenças \nDigestivas e Renais - EUA"
   )+
+  theme_void(base_size = 8)+
   theme(
     legend.position = "none"
   )
@@ -725,12 +686,7 @@ g16 <- dados|>
     x = "Anos",
     y = "Densidade"
   )
-```
 
-
-```{r}
-#| echo: false
-#| warning: false
 (g9+g10)/(g11+g12) + plot_annotation(
   title = "Figura 4: Histogramas das variáveis em análise.",
 ) & theme_bw() &
@@ -747,9 +703,6 @@ g16 <- dados|>
     plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
   )
 ```
-
-
-<!-- ## Gráficos de Dispesão -->
 
 ```{r}
 #| echo: false
@@ -918,227 +871,21 @@ d14 <- dados|>
 (d8+d9)/(d10+d11)+
   plot_annotation(
     title = "Figura : Diagramas de Dispersão das variáveis em análise.",
-  ) & theme_bw(base_size = 10) &
+  ) & theme_bw(base_size = 7) &
   theme(
-    plot.tag.position = c(0, 1),
-    plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
+    # plot.tag.position = c(0, 1),
+    # plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
     legend.position = "none"
   )
 
 (d12+d13)/(d14+plot_spacer()) +
   plot_annotation(
     caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
-  ) & theme_bw(base_size = 10) &
+  ) & theme_bw(base_size = 7) &
   theme(
-    plot.tag.position = c(0, 1),
-    plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
+    # plot.tag.position = c(0, 1),
+    # plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
     legend.position = "none"
   )
 ```
-
-
-
-<!-- ## Boxplot -->
-
-```{r}
-#| echo: false
-#| warning: false
-
-b1 <- dados|>
-  filter(glucose>0, diabetes>0, diastolic>0,
-         triceps>0, insulin>0, bmi>0)|>
-  mutate(
-    test = as_factor(test),
-    test = lvls_revalue(test, c("Negativo", "Positivo"))
-  )|>
-  ggplot(aes(x = test, y = pregnant)) +
-  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
-  labs(
-    title = 'N° de Gestações',
-    x = "Sinais de diabetes",
-    y = "Gestações"
-  ) +
-  scale_y_continuous(
-    labels = scales::number_format(
-      big.mark = ".",
-      decimal.mark = ","))+
-  theme_bw()
-  
-b2 <- dados|>
-  filter(glucose>0, diabetes>0, diastolic>0,
-         triceps>0, insulin>0, bmi>0)|>
-  mutate(
-    test = as_factor(test),
-    test = lvls_revalue(test, c("Negativo", "Positivo"))
-  )|>
-  ggplot(aes(x = test, y = glucose)) +
-  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
-  labs(
-    title = 'Nível de Glicose',
-    x = "Sinais de diabetes",
-    y = "Glicose"
-  ) +
-  scale_y_continuous(
-    labels = scales::number_format(
-      big.mark = ".",
-      decimal.mark = ","))+
-  theme_bw()
-
-b3 <- dados|>
-  filter(glucose>0, diabetes>0, diastolic>0,
-         triceps>0, insulin>0, bmi>0)|>
-  mutate(
-    test = as_factor(test),
-    test = lvls_revalue(test, c("Negativo", "Positivo"))
-  )|>
-  ggplot(aes(x = test, y = diastolic)) +
-  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
-  labs(
-    title = 'Pressão Diastólica',
-    x = "Sinais de diabetes",
-    y = "Pressão Diastólica"
-  ) +
-  scale_y_continuous(
-    labels = scales::number_format(
-      big.mark = ".",
-      decimal.mark = ","))+
-  theme_bw()
-
-b4 <- dados|>
-  filter(glucose>0, diabetes>0, diastolic>0,
-         triceps>0, insulin>0, bmi>0)|>
-  mutate(
-    test = as_factor(test),
-    test = lvls_revalue(test, c("Negativo", "Positivo"))
-  )|>
-  ggplot(aes(x = test, y = insulin)) +
-  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
-  labs(
-    title = 'Nível de Insulina',
-    x = "Sinais de diabetes",
-    y = "Nível de Insulina"
-  ) +
-  scale_y_continuous(
-    labels = scales::number_format(
-      big.mark = ".",
-      decimal.mark = ","))+
-  theme_bw()
-
-b5 <- dados|>
-  filter(glucose>0, diabetes>0, diastolic>0,
-         triceps>0, insulin>0, bmi>0)|>
-  mutate(
-    test = as_factor(test),
-    test = lvls_revalue(test, c("Negativo", "Positivo"))
-  )|>
-  ggplot(aes(x = test, y = bmi)) +
-  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
-  labs(
-    title = 'IMC',
-    x = "Sinais de diabetes",
-    y = "IMC"
-  ) +
-  scale_y_continuous(
-    labels = scales::number_format(
-      big.mark = ".",
-      decimal.mark = ","))+
-  theme_bw()
-
-b6 <- dados|>
-  filter(glucose>0, diabetes>0, diastolic>0,
-         triceps>0, insulin>0, bmi>0)|>
-  mutate(
-    test = as_factor(test),
-    test = lvls_revalue(test, c("Negativo", "Positivo"))
-  )|>
-  ggplot(aes(x = test, y = triceps)) +
-  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
-  labs(
-    title = 'Largura do Tríceps',
-    x = "Sinais de diabetes",
-    y = "Tríceps"
-  ) +
-  scale_y_continuous(
-    labels = scales::number_format(
-      big.mark = ".",
-      decimal.mark = ","))+
-  theme_bw()
-
-
-b7 <- dados|>
-  filter(glucose>0, diabetes>0, diastolic>0,
-         triceps>0, insulin>0, bmi>0)|>
-  mutate(
-    test = as_factor(test),
-    test = lvls_revalue(test, c("Negativo", "Positivo"))
-  )|>
-  ggplot(aes(x = test, y = age)) +
-  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
-  labs(
-    title = 'Idade',
-    x = "Sinais de diabetes",
-    y = "Idade"
-  ) +
-  scale_y_continuous(
-    labels = scales::number_format(
-      big.mark = ".",
-      decimal.mark = ","))+
-  theme_bw()
-
-b8 <- dados|>
-  filter(glucose>0, diabetes>0, diastolic>0,
-         triceps>0, insulin>0, bmi>0)|>
-  mutate(
-    test = as_factor(test),
-    test = lvls_revalue(test, c("Negativo", "Positivo"))
-  )|>
-  ggplot(aes(x = test, y = diabetes)) +
-  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
-  labs(
-    title = 'N. Diabetes',
-    x = "Sinais de diabetes",
-    y = "Diabetes"
-  ) +
-  scale_y_continuous(
-    labels = scales::number_format(
-      big.mark = ".",
-      decimal.mark = ","))+
-  theme_bw()
-
-(b1+b2)/(b3+b4)+
-  plot_annotation(
-    title = "Figura : ",
-  ) & theme_bw(base_size = 10) &
-  theme(
-    plot.tag.position = c(0, 1),
-    plot.tag = element_text(size = 12, hjust = 0, vjust = 0)
-  )
-
-(b5+b6)/(b7+b8)+
-  plot_annotation(
-    caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
-  ) & theme_bw(base_size = 10) &
-  theme(
-    plot.tag.position = c(0, 1),
-    plot.tag = element_text(size = 12, hjust = 0, vjust = 0)
-  )
-```
-
 :::
-
-## Conclusão
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

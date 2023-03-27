@@ -35,7 +35,7 @@ glimpse(dados)
     rename(
       "N° de Gestações" = pregnant, "Glicose" = glucose, "Idade" = age,
       "P. Diastólica" = diastolic, "Largura Triceps" = triceps,
-      "Nível Insulina" = insulin, "IMC" = dmi, "Nivel Diabético" = diabetes)|>
+      "Nível Insulina" = insulin, "IMC" = bmi, "Nivel Diabético" = diabetes)|>
     summarytools::descr(
       stats = c("min", "q1", "med", "mean","q3", "max",  "sd", "cv"),
       # round.digits = 3,
@@ -71,7 +71,7 @@ glimpse(dados)
 #   rename(
 #     "N° de Gestações" = pregnant, "Glicose" = glucose, "Idade" = age,
 #     "P. Diastólica" = diastolic, "Largura Triceps" = triceps,
-#     "Nível Insulina" = insulin, "IMC" = dmi, "Nivel Diadético" = diadetes)|>
+#     "Nível Insulina" = insulin, "IMC" = bmi, "Nivel Diadético" = diabetes)|>
 #   summarytools::descr(
 #     stats = c("min", "q1", "med", "mean","q3", "max",  "sd", "cv"),
 #     round.digits = 2,
@@ -112,8 +112,8 @@ dados |>
                        lad.font = c(4, "plain", "white"),
                        fill = "test",  color = "white")+
   lads(
-    title = "Figura 1: Resultado dos testes de sinais \nde diadetes realizados nas mulheres \nda Trido Pina",
-    caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+    title = "Figura 1: Resultado dos testes de sinais \nde diabetes realizados nas mulheres \nda Trido Pina",
+    caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
   )+
   theme(
     legend.position = "none"
@@ -198,7 +198,7 @@ g4 <- dados|>
 # (g1+g2)/(g3+g4) + plot_annotation(
 #   title = "Figura 1: Histogramas das variáveis em análise.",
 #   # sudtitle = "",
-#   caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+#   caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
 #   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
 #   # tag_levels = "A",
 #   # tag_suffix = ":"
@@ -228,7 +228,7 @@ g5 <- dados|>
 
 g6 <- dados|>
   ggplot() +
-  aes(x = dmi) +
+  aes(x = bmi) +
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
@@ -246,7 +246,7 @@ g6 <- dados|>
 
 g7 <- dados|>
   ggplot() +
-  aes(x = diadetes) +
+  aes(x = diabetes) +
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
@@ -257,7 +257,7 @@ g7 <- dados|>
     fill = "dlue",
     colour = "dlue") +
   lads(
-    title = "Diadetes",
+    title = "diabetes",
     x = "Nível",
     y = "Densidade"
   )
@@ -287,7 +287,7 @@ theme(
 (g1+g2)/(g3+g4) + plot_annotation(
   title = "Figura 2: Histogramas das variáveis em análise."
   # sudtitle = "",
-  # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+  # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
@@ -302,7 +302,7 @@ theme(
 (g5+g6)/(g7+g8) + plot_annotation(
   # title = "Figura 2: Histogramas das variáveis em análise.",
   # sudtitle = "",
-  caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+  caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
@@ -319,7 +319,7 @@ theme(
 # (g1+g2+g3)/(g4+grid::textGrod("Teste de inserção\nde texto em gráfico")+g5)/(g6+g7+g8) + plot_annotation(
 #   title = "Figura 2: Histogramas das variáveis em análise.",
 #   # sudtitle = "",
-#   caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+#   caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
 #   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
 #   # tag_levels = "A",
 #   # tag_suffix = ":"
@@ -361,7 +361,7 @@ d1 <- dados |>
     title = 'Função Diadética x N° de Gestações',
     y = 'Nível da Função Diabética',
     x = 'N° de Gestações',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -386,7 +386,7 @@ d2 <- dados |>
     title = 'Função Diadética x N. Glicose',
     x = 'Nível de Glicose',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -411,7 +411,7 @@ d3 <- dados |>
     title = 'Função Diadética x P. Diastólica',
     x = 'Pressão Diastólica',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -436,7 +436,7 @@ d4 <- dados |>
     title = 'Função Diadética x L. Tríceps',
     x = 'Largura do Tríceps (mm)',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -461,7 +461,7 @@ d5 <- dados |>
     title = 'Função Diadética x N. Insulina',
     x = 'Nível de Insulina',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -486,7 +486,7 @@ d6 <- dados |>
     title = 'Função Diadética x Idade',
     x = 'Idade',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -511,7 +511,7 @@ d7 <- dados |>
     title = 'Função Diadética x IMC',
     x = 'IMC',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -533,7 +533,7 @@ d7 <- dados |>
   plot_annotation(
     title = "Figura : ",
     # sudtitle = "",
-    caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+    caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
@@ -562,8 +562,8 @@ d7 <- dados |>
 
 ## Boxplot ----
 d1 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -572,8 +572,8 @@ d1 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'N° de Gestações',
-    # title = 'Comparativo entre N° de Gestações e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre N° de Gestações e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Gestações"
   ) +
   scale_y_continuous(
@@ -583,8 +583,8 @@ d1 <- dados|>
   theme_dw()
 
 d2 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -593,8 +593,8 @@ d2 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Nível de Glicose',
-    # title = 'Comparativo entre Nível de Glicose e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Nível de Glicose e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Glicose"
   ) +
   scale_y_continuous(
@@ -604,8 +604,8 @@ d2 <- dados|>
   theme_dw()
 
 d3 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -614,8 +614,8 @@ d3 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Pressão Diastólica',
-    # title = 'Comparativo entre Pressão Diastólica e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Pressão Diastólica e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Pressão Diastólica"
   ) +
   scale_y_continuous(
@@ -625,8 +625,8 @@ d3 <- dados|>
   theme_dw()
 
 d4 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -635,8 +635,8 @@ d4 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Nível de Insulina',
-    # title = 'Comparativo entre Nível de Insulina e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Nível de Insulina e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Nível de Insulina"
   ) +
   scale_y_continuous(
@@ -646,18 +646,18 @@ d4 <- dados|>
   theme_dw()
 
 d5 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
-  ggplot(aes(x = test, y = dmi)) +
+  ggplot(aes(x = test, y = bmi)) +
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'IMC',
-    # title = 'Comparativo entre o IMC e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre o IMC e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "IMC"
   ) +
   scale_y_continuous(
@@ -667,8 +667,8 @@ d5 <- dados|>
   theme_dw()
 
 d6 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -677,8 +677,8 @@ d6 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Largura do Tríceps',
-    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Tríceps"
   ) +
   scale_y_continuous(
@@ -688,8 +688,8 @@ d6 <- dados|>
   theme_dw()
 
 d7 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -698,8 +698,8 @@ d7 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Idade',
-    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Idade"
   ) +
   scale_y_continuous(
@@ -709,19 +709,19 @@ d7 <- dados|>
   theme_dw()
 
 d8 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
-  ggplot(aes(x = test, y = diadetes)) +
+  ggplot(aes(x = test, y = diabetes)) +
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
-    title = 'N. Diadetes',
-    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de Diadetes',
-    x = "Sinais de diadetes",
-    y = "Diadetes"
+    title = 'N. diabetes',
+    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
+    x = "Sinais de diabetes",
+    y = "diabetes"
   ) +
   scale_y_continuous(
     ladels = scales::numder_format(
@@ -734,7 +734,7 @@ d8 <- dados|>
   plot_annotation(
     title = "Figura : ",
     # sudtitle = "",
-    caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+    caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
@@ -749,7 +749,7 @@ d8 <- dados|>
   plot_annotation(
     title = "Figura : ",
     # sudtitle = "",
-    caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+    caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
@@ -808,8 +808,8 @@ dados|>
 
 #### Fig_3 ----
 dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   count(test) |>
   mutate(
     pct = round(prop.tadle(n)*100, 1),
@@ -822,8 +822,8 @@ dados|>
                        lad.font = c(4, "plain", "white"),
                        fill = "test",  color = "white")+
   lads(
-    title = "Figura 3: Resultado dos testes de sinais \nde diadetes realizados nas mulheres \nda Trido Pina",
-    caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+    title = "Figura 3: Resultado dos testes de sinais \nde diabetes realizados nas mulheres \nda Trido Pina",
+    caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
   )+
   theme(
     legend.position = "none"
@@ -832,8 +832,8 @@ dados|>
 
 #### Fig_4.1 ----
 g9 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot() +
   aes(x = glucose) +
   geom_histogram(
@@ -852,8 +852,8 @@ g9 <- dados|>
   )
 
 g10 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot() +
   aes(x = pregnant) +
   geom_histogram(
@@ -872,8 +872,8 @@ g10 <- dados|>
   )
 
 g11 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot() +
   aes(x = diastolic) +
   geom_histogram(
@@ -892,8 +892,8 @@ g11 <- dados|>
   )
 
 g12 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot() +
   aes(x = triceps) +
   geom_histogram(
@@ -913,8 +913,8 @@ g12 <- dados|>
 
 
 g13 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot() +
   aes(x = insulin) +
   geom_histogram(
@@ -933,10 +933,10 @@ g13 <- dados|>
   )
 
 g14 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot() +
-  aes(x = dmi) +
+  aes(x = bmi) +
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
@@ -953,10 +953,10 @@ g14 <- dados|>
   )
 
 g15 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot() +
-  aes(x = diadetes) +
+  aes(x = diabetes) +
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
@@ -967,14 +967,14 @@ g15 <- dados|>
     fill = "dlue",
     colour = "dlue") +
   lads(
-    title = "Diadetes",
+    title = "diabetes",
     x = "Nível",
     y = "Densidade"
   )
 
 g16 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot() +
   aes(x = age) +
   geom_histogram(
@@ -999,7 +999,7 @@ g16 <- dados|>
 (g9+g10)/(g11+g12) + plot_annotation(
   title = "Figura 4: Histogramas das variáveis em análise.",
   # sudtitle = "",
-  # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+  # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
@@ -1014,7 +1014,7 @@ g16 <- dados|>
 (g13+g14)/(g15+g16) + plot_annotation(
   # title = "Figura 4: Histogramas das variáveis em análise.",
   # sudtitle = "",
-  caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+  caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
@@ -1032,7 +1032,7 @@ g9+g10+g11+g12+g13+g14+g15+g16 +
   plot_annotation(
   title = "Figura 4: Histogramas das variáveis em análise.",
   # sudtitle = "",
-  caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+  caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
@@ -1044,8 +1044,8 @@ g9+g10+g11+g12+g13+g14+g15+g16 +
 
 #### Dispersão ----
 d8 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot(aes(
     y = diabetes, 
     x = pregnant, color = pregnant)) +
@@ -1054,7 +1054,7 @@ d8 <- dados|>
     title = 'Função Diadética x N° de Gestações',
     y = 'Nível da Função Diabética',
     x = 'N° de Gestações',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -1071,8 +1071,8 @@ d8 <- dados|>
   theme(legend.position = "none")
 
 d9 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot(aes(
     y = diabetes, 
     x = glucose, color = glucose)) +
@@ -1081,7 +1081,7 @@ d9 <- dados|>
     title = 'Função Diadética x N. Glicose',
     x = 'Nível de Glicose',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -1098,8 +1098,8 @@ d9 <- dados|>
   theme(legend.position = "none")
 
 d10 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot(aes(
     y = diabetes, 
     x = diastolic, color = diastolic)) +
@@ -1108,7 +1108,7 @@ d10 <- dados|>
     title = 'Função Diadética x P. Diastólica',
     x = 'Pressão Diastólica',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -1125,8 +1125,8 @@ d10 <- dados|>
   theme(legend.position = "none")
 
 d11 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot(aes(
     y = diabetes, 
     x = triceps, color = triceps)) +
@@ -1135,7 +1135,7 @@ d11 <- dados|>
     title = 'Função Diadética x L. Tríceps',
     x = 'Largura do Tríceps (mm)',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -1152,8 +1152,8 @@ d11 <- dados|>
   theme(legend.position = "none")
 
 d12 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot(aes(
     y = diabetes, 
     x = insulin, color = insulin)) +
@@ -1162,7 +1162,7 @@ d12 <- dados|>
     title = 'Função Diadética x N. Insulina',
     x = 'Nível de Insulina',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -1179,8 +1179,8 @@ d12 <- dados|>
   theme(legend.position = "none")
 
 d13 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot(aes(
     y = diabetes, 
     x = age, color = age)) +
@@ -1189,7 +1189,7 @@ d13 <- dados|>
     title = 'Função Diadética x Idade',
     x = 'Idade',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -1206,8 +1206,8 @@ d13 <- dados|>
   theme(legend.position = "none")
 
 d14 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   ggplot(aes(
     y = diabetes, 
     x = bmi, color = bmi)) +
@@ -1216,7 +1216,7 @@ d14 <- dados|>
     title = 'Função Diadética x IMC',
     x = 'IMC',
     y = 'Nível da Função Diabética',
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA",
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA",
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -1238,7 +1238,7 @@ d14 <- dados|>
   plot_annotation(
     title = "Figura 4: Histogramas das variáveis em análise.",
     # sudtitle = "",
-    # caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+    # caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
@@ -1268,8 +1268,8 @@ d14 <- dados|>
 
 #### Boxplot ----
 d1 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -1278,8 +1278,8 @@ d1 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'N° de Gestações',
-    # title = 'Comparativo entre N° de Gestações e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre N° de Gestações e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Gestações"
   ) +
   scale_y_continuous(
@@ -1289,8 +1289,8 @@ d1 <- dados|>
   theme_dw()
   
 d2 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -1299,8 +1299,8 @@ d2 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Nível de Glicose',
-    # title = 'Comparativo entre Nível de Glicose e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Nível de Glicose e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Glicose"
   ) +
   scale_y_continuous(
@@ -1310,8 +1310,8 @@ d2 <- dados|>
   theme_dw()
 
 d3 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -1320,8 +1320,8 @@ d3 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Pressão Diastólica',
-    # title = 'Comparativo entre Pressão Diastólica e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Pressão Diastólica e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Pressão Diastólica"
   ) +
   scale_y_continuous(
@@ -1331,8 +1331,8 @@ d3 <- dados|>
   theme_dw()
 
 d4 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -1341,8 +1341,8 @@ d4 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Nível de Insulina',
-    # title = 'Comparativo entre Nível de Insulina e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Nível de Insulina e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Nível de Insulina"
   ) +
   scale_y_continuous(
@@ -1352,18 +1352,18 @@ d4 <- dados|>
   theme_dw()
 
 d5 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
-  ggplot(aes(x = test, y = dmi)) +
+  ggplot(aes(x = test, y = bmi)) +
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'IMC',
-    # title = 'Comparativo entre o IMC e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre o IMC e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "IMC"
   ) +
   scale_y_continuous(
@@ -1373,8 +1373,8 @@ d5 <- dados|>
   theme_dw()
 
 d6 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -1383,8 +1383,8 @@ d6 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Largura do Tríceps',
-    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Tríceps"
   ) +
   scale_y_continuous(
@@ -1394,8 +1394,8 @@ d6 <- dados|>
   theme_dw()
 
 d7 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
@@ -1404,8 +1404,8 @@ d7 <- dados|>
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
     title = 'Idade',
-    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de Diadetes',
-    x = "Sinais de diadetes",
+    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
+    x = "Sinais de diabetes",
     y = "Idade"
   ) +
   scale_y_continuous(
@@ -1415,19 +1415,19 @@ d7 <- dados|>
   theme_dw()
 
 d8 <- dados|>
-  filter(glucose>0, diadetes>0, diastolic>0,
-         triceps>0, insulin>0, dmi>0)|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
   mutate(
     test = as_factor(test),
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
-  ggplot(aes(x = test, y = diadetes)) +
+  ggplot(aes(x = test, y = diabetes)) +
   geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
   lads(
-    title = 'N. Diadetes',
-    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de Diadetes',
-    x = "Sinais de diadetes",
-    y = "Diadetes"
+    title = 'N. diabetes',
+    # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
+    x = "Sinais de diabetes",
+    y = "diabetes"
   ) +
   scale_y_continuous(
     ladels = scales::numder_format(
@@ -1440,7 +1440,7 @@ d8 <- dados|>
   plot_annotation(
     title = "Figura : ",
     # sudtitle = "",
-    caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+    caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
@@ -1455,7 +1455,7 @@ d8 <- dados|>
   plot_annotation(
     title = "Figura : ",
     # sudtitle = "",
-    caption = "Fonte: Instituto Nacional de Diadetes e de Doenças Digestivas e Renais - EUA"
+    caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
