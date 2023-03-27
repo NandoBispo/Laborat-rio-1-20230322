@@ -96,11 +96,11 @@ dados |>
     labs = glue::glue('{tipo}\n({pct}%)')) %>%
   ggpubr::ggdonutchart(., "pct",
                        label = "labs", lab.pos = "in",
-                       lab.font = c(4, "plain", "white"),
+                       lab.font = c(3, "plain", "white"),
                        fill = "test",  color = "white")+
   labs(
-    title = "Figura 1: Resultado dos testes de sinais de diabetes realizados \nnas mulheres da Tribo Pina",
-    caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
+    title = "Figura 1: Resultado dos testes que avaliam sinais \nde diabetes realizados nas mulheres da Tribo Pina",
+    caption = "Fonte: Instituto Nacional de Diabetes e de Doenças \nDigestivas e Renais - EUA"
   )+
   theme_void(base_size = 9)+
   theme(
@@ -288,7 +288,7 @@ d1 <- dados |>
   geom_point()+
   labs(
     title = 'Função Diadética x N° de Gestações',
-    y = 'Nível da Função Diabética',
+    y = 'Função Diabética',
     x = 'N° de Gestações',
     color = "N° de Gestações"
   )+
@@ -311,7 +311,7 @@ d2 <- dados |>
   labs(
     title = 'Função Diadética x N. Glicose',
     x = 'Nível de Glicose',
-    y = 'Nível da Função Diabética',
+    y = 'Função Diabética',
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -333,7 +333,7 @@ d3 <- dados |>
   labs(
     title = 'Função Diadética x P. Diastólica',
     x = 'Pressão Diastólica',
-    y = 'Nível da Função Diabética',
+    y = 'Função Diabética',
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -355,7 +355,7 @@ d4 <- dados |>
   labs(
     title = 'Função Diadética x L. Tríceps',
     x = 'Largura do Tríceps (mm)',
-    y = 'Nível da Função Diabética',
+    y = 'Função Diabética',
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -377,7 +377,7 @@ d5 <- dados |>
   labs(
     title = 'Função Diadética x N. Insulina',
     x = 'Nível de Insulina',
-    y = 'Nível da Função Diabética',
+    y = 'Função Diabética',
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -399,7 +399,7 @@ d6 <- dados |>
   labs(
     title = 'Função Diadética x Idade',
     x = 'Idade',
-    y = 'Nível da Função Diabética',
+    y = 'Função Diabética',
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -421,7 +421,7 @@ d7 <- dados |>
   labs(
     title = 'Função Diadética x IMC',
     x = 'IMC',
-    y = 'Nível da Função Diabética',
+    y = 'Função Diabética',
     color = "N° de Gestações"
   )+
   scale_x_continuous(
@@ -438,7 +438,7 @@ d7 <- dados |>
 (d1+d2)/(d3+d4)+
   plot_annotation(
     title = "Figura 3: Relação entre Diabetes e demais medições ",
-  ) & theme_bw(base_size = 7) &
+  ) & theme_bw(base_size = 8) &
   theme(
     # plot.tag.position = c(0, 1),
     # plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
@@ -448,7 +448,7 @@ d7 <- dados |>
 (d5+d6)/(d7+plot_spacer())+
   plot_annotation(
     caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA"
-  ) & theme_bw(base_size = 7) &
+  ) & theme_bw(base_size = 8) &
   theme(
     # plot.tag.position = c(0, 1),
     # plot.tag = element_text(size = 12, hjust = 0, vjust = 0),
@@ -514,10 +514,10 @@ dados|>
                        lab.font = c(3, "plain", "white"),
                        fill = "test",  color = "white")+
   labs(
-    title = "Figura 3: Resultado dos testes de sinais de diabetes realizados \nnas mulheres da Tribo Pina",
+    title = "Figura 3: Resultado dos testes que avaliam sinais \nde diabetes realizados nas mulheres da Tribo Pina",
     caption = "Fonte: Instituto Nacional de Diabetes e de Doenças \nDigestivas e Renais - EUA"
   )+
-  theme_void(base_size = 8)+
+  theme_void(base_size = 9)+
   theme(
     legend.position = "none"
   )
