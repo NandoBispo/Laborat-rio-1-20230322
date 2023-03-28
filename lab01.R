@@ -26,6 +26,80 @@ dados <- dados |>
 
 glimpse(dados)
 
+
+
+p1 <- dados |>
+  count(test) |>
+  mutate(
+    pct = round(prop.table(n)*100, 1),
+    tipo = case_when(
+      test == 0 ~ "Negativo",
+      test == 1 ~ "Positivo"),
+    labs = glue::glue('{tipo}\n({pct}%)')) %>%
+  ggpubr::ggdonutchart(., "pct",
+                       label = "labs", lab.pos = "in",
+                       lab.font = c(3, "plain", "white"),
+                       fill = "test",  color = "white")+
+labs(
+  title = "Com zeros"
+  # caption = "Fonte: Instituto Nacional de Diabetes e de Doenças \nDigestivas e Renais - EUA"
+)
+# theme_void(base_size = 9)+
+# theme(
+#   legend.position = "none"
+# )
+
+
+p2 <- dados|>
+  filter(glucose>0, diabetes>0, diastolic>0,
+         triceps>0, insulin>0, bmi>0)|>
+  count(test) |>
+  mutate(
+    pct = round(prop.table(n)*100, 1),
+    tipo = case_when(
+      test == 0 ~ "Negativo",
+      test == 1 ~ "Positivo"),
+    labs = glue::glue('{tipo}\n({pct}%)')) %>%
+  ggpubr::ggdonutchart(., "pct", 
+                       label = "labs", lab.pos = "in",
+                       lab.font = c(3, "plain", "white"),
+                       fill = "test",  color = "white")+
+labs(
+  title = "Sem Zeros"
+  # caption = "Fonte: Instituto Nacional de Diabetes e de Doenças \nDigestivas e Renais - EUA"
+)
+# theme_void(base_size = 9)+
+# theme(
+#   legend.position = "none"
+# )
+
+
+(p1+p2) + plot_annotation(
+  title = "Figura 1: Resultado dos testes que avaliam sinais de diabetes realizados nas mulheres da Tribo Pina",
+  caption = "Fonte: Instituto Nacional de Diabetes e de Doenças Digestivas e Renais - EUA",
+  # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
+  # # tag_levels = "A",
+  # tag_suffix = ":"
+) & theme_void(base_size = 9) &
+  theme(
+    plot.tag.position = c(0, 1),
+    plot.tag = element_text(size = 8, hjust = 0, vjust = 3),
+    legend.position = "none"
+  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # AED
 ## COM ZEROS ----
 ### TABELA 1 ----
@@ -106,12 +180,12 @@ dados |>
     tipo = case_when(
       test == 0 ~ "Negativo",
       test == 1 ~ "Positivo"),
-    lads = glue::glue('{tipo}\n({pct}%)')) %>%
+    labs = glue::glue('{tipo}\n({pct}%)')) %>%
   ggpudr::ggdonutchart(., "pct", 
-                       ladel = "lads", lad.pos = "in",
+                       ladel = "labs", lad.pos = "in",
                        lad.font = c(4, "plain", "white"),
                        fill = "test",  color = "white")+
-  lads(
+  labs(
     title = "Figura 1: Resultado dos testes de sinais \nde diabetes realizados nas mulheres \nda Trido Pina",
     caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
   )+
@@ -130,12 +204,12 @@ g1 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Glicose",
     x = "Concentração",
     y = "Densidade"
@@ -148,12 +222,12 @@ g2 <- dados|>
     aes(y = after_stat(density)),
     dinwidth = 1,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Gestações",
     x = "Quantidade",
     y = "Densidade"
@@ -166,12 +240,12 @@ g3 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Pressão Diastólica",
     x = "Medida (mmHg)",
     y = "Densidade"
@@ -184,12 +258,12 @@ g4 <- dados|>
     aes(y = after_stat(density)),
     dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Tríceps",
     x = "Largura (mm)",
     y = "Densidade"
@@ -215,12 +289,12 @@ g5 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 25,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Insulina",
     x = "Nível (µU/ml)",
     y = "Densidade"
@@ -233,12 +307,12 @@ g6 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "IMC",
     x = "Índice (kg/m²)",
     y = "Densidade"
@@ -251,12 +325,12 @@ g7 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "diabetes",
     x = "Nível",
     y = "Densidade"
@@ -269,12 +343,12 @@ g8 <- dados|>
     aes(y = after_stat(density)),
     dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Idade",
     x = "Anos",
     y = "Densidade"
@@ -348,7 +422,7 @@ ggplot(
     ))+
   xlad("")+
   ylad("Proporção")+
-  scale_y_continuous(ladels = scales::percent)+
+  scale_y_continuous(labels = scales::percent)+
   coord_flip()
 
 #### Dispersão ----
@@ -569,15 +643,15 @@ d1 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = pregnant)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
+  labs(
     title = 'N° de Gestações',
     # title = 'Comparativo entre N° de Gestações e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Gestações"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -590,15 +664,15 @@ d2 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = glucose)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
+  labs(
     title = 'Nível de Glicose',
     # title = 'Comparativo entre Nível de Glicose e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Glicose"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -611,15 +685,15 @@ d3 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = diastolic)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
+  labs(
     title = 'Pressão Diastólica',
     # title = 'Comparativo entre Pressão Diastólica e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Pressão Diastólica"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -632,15 +706,15 @@ d4 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = insulin)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
+  labs(
     title = 'Nível de Insulina',
     # title = 'Comparativo entre Nível de Insulina e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Nível de Insulina"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -653,15 +727,15 @@ d5 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = bmi)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
+  labs(
     title = 'IMC',
     # title = 'Comparativo entre o IMC e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "IMC"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -674,15 +748,15 @@ d6 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = triceps)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
+  labs(
     title = 'Largura do Tríceps',
     # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Tríceps"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -695,15 +769,15 @@ d7 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = age)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
+  labs(
     title = 'Idade',
     # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Idade"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -716,15 +790,15 @@ d8 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = diabetes)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
+  labs(
     title = 'N. diabetes',
     # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "diabetes"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -816,12 +890,12 @@ dados|>
     tipo = case_when(
       test == 0 ~ "Negativo",
       test == 1 ~ "Positivo"),
-    lads = glue::glue('{tipo}\n({pct}%)')) %>%
+    labs = glue::glue('{tipo}\n({pct}%)')) %>%
   ggpudr::ggdonutchart(., "pct", 
-                       ladel = "lads", lad.pos = "in",
+                       ladel = "labs", lad.pos = "in",
                        lad.font = c(4, "plain", "white"),
                        fill = "test",  color = "white")+
-  lads(
+  labs(
     title = "Figura 3: Resultado dos testes de sinais \nde diabetes realizados nas mulheres \nda Trido Pina",
     caption = "Fonte: Instituto Nacional de diabetes e de Doenças Digestivas e Renais - EUA"
   )+
@@ -840,12 +914,12 @@ g9 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Glicose",
     x = "Concentração",
     y = "Densidade"
@@ -860,12 +934,12 @@ g10 <- dados|>
     aes(y = after_stat(density)),
     dinwidth = 1,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Gestações",
     x = "Quantidade",
     y = "Densidade"
@@ -880,12 +954,12 @@ g11 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Pressão Diastólica",
     x = "Medida (mmHg)",
     y = "Densidade"
@@ -900,12 +974,12 @@ g12 <- dados|>
     aes(y = after_stat(density)),
     dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Tríceps",
     x = "Largura (mm)",
     y = "Densidade"
@@ -921,12 +995,12 @@ g13 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 25,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Insulina",
     x = "Nível (µU/ml)",
     y = "Densidade"
@@ -941,12 +1015,12 @@ g14 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "IMC",
     x = "Índice (kg/m²)",
     y = "Densidade"
@@ -961,12 +1035,12 @@ g15 <- dados|>
     aes(y = after_stat(density)),
     # dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "diabetes",
     x = "Nível",
     y = "Densidade"
@@ -974,19 +1048,19 @@ g15 <- dados|>
 
 g16 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
-         triceps>0, insulin>0, bmi>0)|>
+         triceps>0, insulin>0, bmi>0)|>count()
   ggplot() +
   aes(x = age) +
   geom_histogram(
     aes(y = after_stat(density)),
     dinwidth = 5,
     fill = "lightdlue",
-    colour = "darkdlue") +
+    colour = "darkblue") +
   geom_density(
     alpha = 0.2,
     fill = "dlue",
     colour = "dlue") +
-  lads(
+  labs(
     title = "Idade",
     x = "Anos",
     y = "Densidade"
@@ -1275,15 +1349,15 @@ d1 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = pregnant)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  labs(
     title = 'N° de Gestações',
     # title = 'Comparativo entre N° de Gestações e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Gestações"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -1296,15 +1370,15 @@ d2 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = glucose)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  labs(
     title = 'Nível de Glicose',
     # title = 'Comparativo entre Nível de Glicose e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Glicose"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -1317,15 +1391,15 @@ d3 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = diastolic)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  labs(
     title = 'Pressão Diastólica',
     # title = 'Comparativo entre Pressão Diastólica e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Pressão Diastólica"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -1338,15 +1412,15 @@ d4 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = insulin)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  labs(
     title = 'Nível de Insulina',
     # title = 'Comparativo entre Nível de Insulina e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Nível de Insulina"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -1359,15 +1433,15 @@ d5 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = bmi)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  labs(
     title = 'IMC',
     # title = 'Comparativo entre o IMC e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "IMC"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -1380,15 +1454,15 @@ d6 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = triceps)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  labs(
     title = 'Largura do Tríceps',
     # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Tríceps"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -1401,15 +1475,15 @@ d7 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = age)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  labs(
     title = 'Idade',
     # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "Idade"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
@@ -1422,15 +1496,15 @@ d8 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = diabetes)) +
-  geom_doxplot(col="darkdlue", fill="skydlue", alpha = 0.5)+
-  lads(
+  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  labs(
     title = 'N. diabetes',
     # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
     x = "Sinais de diabetes",
     y = "diabetes"
   ) +
   scale_y_continuous(
-    ladels = scales::numder_format(
+    labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
   theme_dw()
