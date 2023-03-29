@@ -203,17 +203,17 @@ g1 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Glicose",
     x = "Concentração",
     y = "Densidade"
-  ) + theme_dw()
+  ) + theme_bw()
 
 g2 <- dados|>
   ggplot() +
@@ -221,17 +221,17 @@ g2 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     dinwidth = 1,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Gestações",
     x = "Quantidade",
     y = "Densidade"
-  ) + theme_dw()
+  ) + theme_bw()
 
 g3 <- dados|>
   ggplot() +
@@ -239,17 +239,17 @@ g3 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Pressão Diastólica",
     x = "Medida (mmHg)",
     y = "Densidade"
-  ) + theme_dw()
+  ) + theme_bw()
 
 g4 <- dados|>
   ggplot() +
@@ -257,17 +257,17 @@ g4 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Tríceps",
     x = "Largura (mm)",
     y = "Densidade"
-  ) + theme_dw()
+  ) + theme_bw()
 
 # (g1+g2)/(g3+g4) + plot_annotation(
 #   title = "Figura 1: Histogramas das variáveis em análise.",
@@ -288,12 +288,12 @@ g5 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 25,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Insulina",
     x = "Nível (µU/ml)",
@@ -306,12 +306,12 @@ g6 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "IMC",
     x = "Índice (kg/m²)",
@@ -324,12 +324,12 @@ g7 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "diabetes",
     x = "Nível",
@@ -342,12 +342,12 @@ g8 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Idade",
     x = "Anos",
@@ -365,7 +365,7 @@ theme(
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
-) & theme_dw(dase_size = 10) &
+) & theme_bw(base_size = 10) &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
@@ -380,7 +380,7 @@ theme(
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
-) & theme_dw(dase_size = 10) &
+) & theme_bw(base_size = 10) &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
@@ -397,7 +397,7 @@ theme(
 #   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
 #   # tag_levels = "A",
 #   # tag_suffix = ":"
-# ) & theme_dw() &
+# ) & theme_bw() &
 #   theme(
 #     plot.tag.position = c(0, 1),
 #     plot.tag = element_text(size = 8, hjust = 0, vjust = 0),
@@ -654,7 +654,7 @@ d1 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d2 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -675,7 +675,7 @@ d2 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d3 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -696,7 +696,7 @@ d3 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d4 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -717,7 +717,7 @@ d4 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d5 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -738,7 +738,7 @@ d5 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d6 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -759,7 +759,7 @@ d6 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d7 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -780,7 +780,7 @@ d7 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d8 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -801,7 +801,7 @@ d8 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 (d1+d2)/(d3+d4)+
   # plot_layout(nrow = 2, ncol = 3) + 
@@ -812,7 +812,7 @@ d8 <- dados|>
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
-  ) & theme_dw(dase_size = 10) &
+  ) & theme_bw(base_size = 10) &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 12, hjust = 0, vjust = 0)
@@ -827,7 +827,7 @@ d8 <- dados|>
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
-  ) & theme_dw(dase_size = 10) &
+  ) & theme_bw(base_size = 10) &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 12, hjust = 0, vjust = 0)
@@ -912,13 +912,13 @@ g9 <- dados|>
   aes(x = glucose) +
   geom_histogram(
     aes(y = after_stat(density)),
-    # dinwidth = 5,
-    fill = "lightdlue",
+    # binwidth = 5,
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Glicose",
     x = "Concentração",
@@ -933,12 +933,12 @@ g10 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     dinwidth = 1,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Gestações",
     x = "Quantidade",
@@ -953,12 +953,12 @@ g11 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Pressão Diastólica",
     x = "Medida (mmHg)",
@@ -973,12 +973,12 @@ g12 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Tríceps",
     x = "Largura (mm)",
@@ -994,12 +994,12 @@ g13 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 25,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Insulina",
     x = "Nível (µU/ml)",
@@ -1014,12 +1014,12 @@ g14 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "IMC",
     x = "Índice (kg/m²)",
@@ -1034,12 +1034,12 @@ g15 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     # dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "diabetes",
     x = "Nível",
@@ -1054,12 +1054,12 @@ g16 <- dados|>
   geom_histogram(
     aes(y = after_stat(density)),
     dinwidth = 5,
-    fill = "lightdlue",
+    fill = "lightblue",
     colour = "darkblue") +
   geom_density(
     alpha = 0.2,
-    fill = "dlue",
-    colour = "dlue") +
+    fill = "blue",
+    colour = "blue") +
   labs(
     title = "Idade",
     x = "Anos",
@@ -1077,7 +1077,7 @@ g16 <- dados|>
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
-) & theme_dw() &
+) & theme_bw() &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
@@ -1092,7 +1092,7 @@ g16 <- dados|>
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
-) & theme_dw() &
+) & theme_bw() &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
@@ -1110,7 +1110,7 @@ g9+g10+g11+g12+g13+g14+g15+g16 +
   # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
   # tag_levels = "A",
   # tag_suffix = ":"
-) & theme_dw() &
+) & theme_bw() &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 8, hjust = 0, vjust = 0)
@@ -1349,7 +1349,7 @@ d1 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = pregnant)) +
-  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
   labs(
     title = 'N° de Gestações',
     # title = 'Comparativo entre N° de Gestações e Sinais de diabetes',
@@ -1360,7 +1360,7 @@ d1 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
   
 d2 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -1370,7 +1370,7 @@ d2 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = glucose)) +
-  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
   labs(
     title = 'Nível de Glicose',
     # title = 'Comparativo entre Nível de Glicose e Sinais de diabetes',
@@ -1381,7 +1381,7 @@ d2 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d3 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -1391,7 +1391,7 @@ d3 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = diastolic)) +
-  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
   labs(
     title = 'Pressão Diastólica',
     # title = 'Comparativo entre Pressão Diastólica e Sinais de diabetes',
@@ -1402,7 +1402,7 @@ d3 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d4 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -1412,7 +1412,7 @@ d4 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = insulin)) +
-  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
   labs(
     title = 'Nível de Insulina',
     # title = 'Comparativo entre Nível de Insulina e Sinais de diabetes',
@@ -1423,7 +1423,7 @@ d4 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d5 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -1433,7 +1433,7 @@ d5 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = bmi)) +
-  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
   labs(
     title = 'IMC',
     # title = 'Comparativo entre o IMC e Sinais de diabetes',
@@ -1444,7 +1444,7 @@ d5 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d6 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -1454,7 +1454,7 @@ d6 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = triceps)) +
-  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
   labs(
     title = 'Largura do Tríceps',
     # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
@@ -1465,7 +1465,7 @@ d6 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d7 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -1475,7 +1475,7 @@ d7 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = age)) +
-  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
   labs(
     title = 'Idade',
     # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
@@ -1486,7 +1486,7 @@ d7 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 d8 <- dados|>
   filter(glucose>0, diabetes>0, diastolic>0,
@@ -1496,7 +1496,7 @@ d8 <- dados|>
     test = lvls_revalue(test, c("Negativo", "Positivo"))
   )|>
   ggplot(aes(x = test, y = diabetes)) +
-  geom_boxplot(col="darkblue", fill="skydlue", alpha = 0.5)+
+  geom_boxplot(col="darkblue", fill="skyblue", alpha = 0.5)+
   labs(
     title = 'N. diabetes',
     # title = 'Comparativo entre Largura do Tríceps (mm) e Sinais de diabetes',
@@ -1507,7 +1507,7 @@ d8 <- dados|>
     labels = scales::number_format(
       dig.mark = ".",
       decimal.mark = ","))+
-  theme_dw()
+  theme_bw()
 
 (d1+d2)/(d3+d4)+
   # plot_layout(nrow = 2, ncol = 3) + 
@@ -1518,7 +1518,7 @@ d8 <- dados|>
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
-  ) & theme_dw(dase_size = 10) &
+  ) & theme_bw(base_size = 10) &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 12, hjust = 0, vjust = 0)
@@ -1533,7 +1533,7 @@ d8 <- dados|>
     # tag_levels = c("A", "1"), tag_prefix = "Sud Fig. ", tag_sep = ".",
     # tag_levels = "A",
     # tag_suffix = ":"
-  ) & theme_dw(dase_size = 10) &
+  ) & theme_bw(base_size = 10) &
   theme(
     plot.tag.position = c(0, 1),
     plot.tag = element_text(size = 12, hjust = 0, vjust = 0)
